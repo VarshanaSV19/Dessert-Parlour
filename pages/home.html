@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Melt & Swirl is a modern ice cream and dessert parlour offering handcrafted scoops, sundaes, shakes and desserts.">
+
+    <title>Home | Melt & Swirl</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Pacifico&family=Playfair+Display:wght@600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+
+            theme: {
+                extend: {
+                    colors: {
+                        brandPink: "#F8578B",
+                        brandPinkDark: "#E83F78",
+                        brandMint: "#C9F3ED",
+                        brandTeal: "#075E5A",
+                        brandBrown: "#3B1D16",
+                        brandCream: "#FFF8F3"
+                    },
+
+                    fontFamily: {
+                        sans: ["DM Sans", "sans-serif"],
+                        display: ["Playfair Display", "serif"],
+                        logo: ["Pacifico", "cursive"]
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            inset-inline-start: 0;
+            bottom: -8px;
+            width: 0;
+            height: 2px;
+            border-radius: 999px;
+            background-color: #F8578B;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .desktop-dropdown {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transform: translateY(14px);
+            transition:
+                opacity 0.25s ease,
+                visibility 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .desktop-dropdown.dropdown-open {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .mobile-menu-open {
+            max-height: 900px !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .mobile-dropdown-open {
+            max-height: 350px !important;
+            opacity: 1 !important;
+        }
+
+        .loader-hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loader-logo {
+            animation: loaderFloat 0.8s ease-in-out infinite alternate;
+        }
+
+        @keyframes loaderFloat {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-12px);
+            }
+        }
+    </style>
+
+</head>
+
+<body class="bg-white font-sans text-slate-900 transition-colors duration-300 dark:bg-black dark:text-white">
+
+
+<!-- ==================================================
+                         LOADER
+================================================== -->
+
+<div id="pageLoader"
+     class="fixed inset-0 z-[9999] flex items-center justify-center bg-brandCream transition-all duration-700 dark:bg-black">
+
+    <div class="text-center">
+
+        <div class="loader-logo mx-auto flex h-24 w-24 items-center justify-center rounded-[30px] bg-white shadow-xl dark:bg-zinc-900">
+
+            <svg viewBox="0 0 100 125"
+                 class="h-20 w-16"
+                 aria-hidden="true">
+
+                <path d="M31 68 L69 68 L58 113 Q50 121 42 113 Z"
+                      fill="#D99A5E">
+                </path>
+
+                <path d="M35 79 L62 101"
+                      stroke="#A76A35"
+                      stroke-width="3">
+                </path>
+
+                <path d="M63 79 L38 102"
+                      stroke="#A76A35"
+                      stroke-width="3">
+                </path>
+
+                <path d="M50 8
+                         C69 8 77 20 68 33
+                         C84 36 86 52 74 61
+                         C70 65 66 68 61 68
+                         H38
+                         C33 68 29 66 25 62
+                         C14 52 17 37 31 33
+                         C23 20 32 8 50 8Z"
+                      fill="#FFF2DF">
+                </path>
+
+                <path d="M27 42
+                         C38 47 61 46 73 40
+                         C83 48 79 61 68 66
+                         C62 69 58 67 54 68
+                         H38
+                         C32 68 27 65 23 60
+                         C17 52 19 46 27 42Z"
+                      fill="#F8578B">
+                </path>
+
+                <path d="M34 63 C34 76 42 78 45 66"
+                      fill="#E83F78">
+                </path>
+
+                <path d="M53 66 C54 80 63 79 64 65"
+                      fill="#E83F78">
+                </path>
+
+                <path d="M38 28
+                         C46 31 56 30 65 25
+                         C64 34 58 39 48 40
+                         C42 40 37 35 38 28Z"
+                      fill="#5A2A1D">
+                </path>
+
+            </svg>
+
+        </div>
+
+        <h2 class="mt-6 font-logo text-4xl text-brandBrown dark:text-white">
+
+            Melt
+
+            <span class="text-brandPink">
+                &amp;
+            </span>
+
+            Swirl
+
+        </h2>
+
+        <p class="mt-2 text-sm font-semibold text-slate-500 dark:text-zinc-400">
+            Sweet moments are loading...
+        </p>
+
+        <div class="mx-auto mt-5 h-1.5 w-56 overflow-hidden rounded-full bg-pink-100 dark:bg-zinc-800">
+
+            <div id="loaderProgress"
+                 class="h-full w-0 rounded-full bg-brandPink transition-all duration-300">
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ==================================================
+                     FULL-WIDTH HEADER
+================================================== -->
+
+<header id="mainHeader"
+        class="fixed inset-x-0 top-0 z-50 border-b border-teal-900/10 bg-brandMint/95 shadow-[0_8px_35px_rgba(7,94,90,0.10)] backdrop-blur-xl transition-all duration-300 dark:border-zinc-800 dark:bg-black/95">
+
+    <div class="h-1 w-full bg-gradient-to-r from-brandPink via-pink-300 to-brandTeal">
+    </div>
+
+    <div class="mx-auto flex min-h-[94px] max-w-[1600px] items-center justify-between gap-5 px-5 sm:px-7 lg:px-10">
+
+        <!-- Logo -->
+
+        <a href="#"
+           data-page="home1"
+           class="group flex shrink-0 items-center gap-3">
+
+            <div class="flex h-[66px] w-[58px] items-center justify-center transition duration-300 group-hover:-rotate-3 group-hover:scale-105">
+
+                <svg viewBox="0 0 100 125"
+                     class="h-full w-full drop-shadow-md"
+                     aria-hidden="true">
+
+                    <path d="M31 68 L69 68 L58 113 Q50 121 42 113 Z"
+                          fill="#D99A5E">
+                    </path>
+
+                    <path d="M35 79 L62 101"
+                          stroke="#A76A35"
+                          stroke-width="3">
+                    </path>
+
+                    <path d="M63 79 L38 102"
+                          stroke="#A76A35"
+                          stroke-width="3">
+                    </path>
+
+                    <path d="M50 8
+                             C69 8 77 20 68 33
+                             C84 36 86 52 74 61
+                             C70 65 66 68 61 68
+                             H38
+                             C33 68 29 66 25 62
+                             C14 52 17 37 31 33
+                             C23 20 32 8 50 8Z"
+                          fill="#FFF2DF">
+                    </path>
+
+                    <path d="M27 42
+                             C38 47 61 46 73 40
+                             C83 48 79 61 68 66
+                             C62 69 58 67 54 68
+                             H38
+                             C32 68 27 65 23 60
+                             C17 52 19 46 27 42Z"
+                          fill="#F8578B">
+                    </path>
+
+                    <path d="M34 63 C34 76 42 78 45 66"
+                          fill="#E83F78">
+                    </path>
+
+                    <path d="M53 66 C54 80 63 79 64 65"
+                          fill="#E83F78">
+                    </path>
+
+                    <path d="M38 28
+                             C46 31 56 30 65 25
+                             C64 34 58 39 48 40
+                             C42 40 37 35 38 28Z"
+                          fill="#5A2A1D">
+                    </path>
+
+                </svg>
+
+            </div>
+
+            <div class="leading-none">
+
+                <h1 class="font-logo text-[25px] text-brandBrown dark:text-white sm:text-[30px]">
+
+                    Melt
+
+                    <span class="text-brandPink">
+                        &amp;
+                    </span>
+
+                    Swirl
+
+                </h1>
+
+                <p class="mt-2 hidden text-[9px] font-bold uppercase tracking-[0.22em] text-brandTeal dark:text-zinc-400 sm:block">
+                    Ice Cream &amp; Dessert Parlour
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <!-- Desktop navigation -->
+
+        <nav class="hidden xl:block"
+             aria-label="Main navigation">
+
+            <ul class="flex items-center gap-7 2xl:gap-9">
+
+                <!-- Home dropdown -->
+
+                <li class="relative">
+
+                    <button id="desktopHomeButton"
+                            type="button"
+                            aria-expanded="false"
+                            class="nav-link relative flex items-center gap-2 py-3 text-sm font-bold text-brandBrown transition hover:text-brandPink dark:text-white dark:hover:text-brandPink">
+
+                        <span>Home</span>
+
+                        <i id="desktopHomeArrow"
+                           class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300">
+                        </i>
+
+                    </button>
+
+                    <div id="desktopHomeMenu"
+                         class="desktop-dropdown absolute start-1/2 top-full z-50 w-[285px] -translate-x-1/2 pt-5 rtl:translate-x-1/2">
+
+                        <div class="rounded-[24px] border border-pink-100 bg-white p-3 shadow-[0_20px_60px_rgba(59,29,22,0.18)] dark:border-zinc-800 dark:bg-zinc-950">
+
+                            <a href="../index.html"
+                               data-page="home1"
+                               class="group flex items-center gap-4 rounded-[18px] bg-pink-50 p-4 transition duration-300 hover:bg-brandPink dark:bg-zinc-900 dark:hover:bg-brandPink">
+
+                                <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white text-brandPink shadow-sm dark:bg-black">
+
+                                    <i class="fa-solid fa-house"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h3 class="text-sm font-bold text-brandBrown transition group-hover:text-white dark:text-white">
+                                        Home Page 1
+                                    </h3>
+
+                                    <p class="mt-1 text-[11px] text-slate-500 transition group-hover:text-white/80 dark:text-zinc-400">
+                                        Classic parlour experience
+                                    </p>
+
+                                </div>
+
+                            </a>
+
+                            <a href="home.html"
+                               data-page="home2"
+                               class="group mt-2 flex items-center gap-4 rounded-[18px] p-4 transition duration-300 hover:bg-brandTeal">
+
+                                <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-brandTeal shadow-sm dark:bg-zinc-900 dark:text-brandMint">
+
+                                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h3 class="text-sm font-bold text-brandBrown transition group-hover:text-white dark:text-white">
+                                        Home Page 2
+                                    </h3>
+
+                                    <p class="mt-1 text-[11px] text-slate-500 transition group-hover:text-white/80 dark:text-zinc-400">
+                                        Creative dessert discovery
+                                    </p>
+
+                                </div>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </li>
+
+                <li>
+                    <a href="about.html"
+                       data-page="about"
+                       class="nav-link relative py-3 text-sm font-bold text-brandBrown transition hover:text-brandPink dark:text-white">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="menu.html"
+                       data-page="menu"
+                       class="nav-link relative py-3 text-sm font-bold text-brandBrown transition hover:text-brandPink dark:text-white">
+                        Menu
+                    </a>
+                </li>
+
+                <li>
+                    <a href="specials.html"
+                       data-page="specials"
+                       class="nav-link relative py-3 text-sm font-bold text-brandBrown transition hover:text-brandPink dark:text-white">
+                        Specials
+                    </a>
+                </li>
+
+                <li>
+                    <a href="gallery.html"
+                       data-page="gallery"
+                       class="nav-link relative py-3 text-sm font-bold text-brandBrown transition hover:text-brandPink dark:text-white">
+                        Gallery
+                    </a>
+                </li>
+
+                <li>
+                    <a href="team.html"
+                       data-page="team"
+                       class="nav-link relative py-3 text-sm font-bold text-brandBrown transition hover:text-brandPink dark:text-white">
+                        Team
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html"
+                       data-page="contact"
+                       class="nav-link relative py-3 text-sm font-bold text-brandBrown transition hover:text-brandPink dark:text-white">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <!-- Header buttons -->
+
+        <div class="flex shrink-0 items-center gap-2 sm:gap-3">
+
+            <!-- Dark mode -->
+
+            <button id="themeToggle"
+                    type="button"
+                    aria-label="Switch colour theme"
+                    class="flex h-11 w-11 items-center justify-center rounded-full border border-brandTeal/20 bg-white text-lg text-brandTeal shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brandPink hover:text-brandPink dark:border-zinc-700 dark:bg-zinc-900 dark:text-yellow-300">
+
+                <i id="themeIcon"
+                   class="fa-solid fa-moon">
+                </i>
+
+            </button>
+
+            <!-- RTL button -->
+
+            <button id="directionToggle"
+                    type="button"
+                    aria-label="Switch page direction"
+                    class="flex h-11 items-center justify-center gap-2 rounded-full border border-brandPink px-3 text-brandPink transition duration-300 hover:-translate-y-1 hover:bg-brandPink hover:text-white">
+
+                <i class="fa-solid fa-language text-lg"></i>
+
+                <span id="directionText"
+                      class="hidden text-xs font-bold sm:inline">
+                    RTL
+                </span>
+
+            </button>
+
+            <!-- CTA -->
+
+            <a href="#"
+               data-page="menu"
+               class="hidden items-center gap-2 rounded-full bg-brandTeal px-6 py-3 text-sm font-bold text-white shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-brandPink lg:flex">
+
+                <span>Order Now</span>
+
+                <i class="fa-solid fa-ice-cream"></i>
+
+            </a>
+
+            <!-- Mobile menu button -->
+
+            <button id="mobileMenuButton"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    class="flex h-11 w-11 items-center justify-center rounded-full bg-brandTeal text-lg text-white shadow-md transition duration-300 hover:bg-brandPink xl:hidden">
+
+                <i id="mobileMenuIcon"
+                   class="fa-solid fa-bars">
+                </i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Mobile navigation -->
+
+    <div id="mobileMenu"
+         class="invisible max-h-0 overflow-hidden border-t border-teal-900/10 bg-white opacity-0 transition-all duration-500 dark:border-zinc-800 dark:bg-black xl:hidden">
+
+        <nav class="mx-auto max-w-[1600px] px-5 py-5 sm:px-7">
+
+            <div class="space-y-2">
+
+                <!-- Mobile Home dropdown -->
+
+                <div class="overflow-hidden rounded-2xl border border-pink-100 dark:border-zinc-800">
+
+                    <button id="mobileHomeButton"
+                            type="button"
+                            aria-expanded="false"
+                            class="flex w-full items-center justify-between bg-pink-50 px-5 py-4 text-start font-bold text-brandBrown dark:bg-zinc-900 dark:text-white">
+
+                        <span class="flex items-center gap-3">
+
+                            <i class="fa-solid fa-house text-brandPink"></i>
+
+                            <span>Home</span>
+
+                        </span>
+
+                        <i id="mobileHomeArrow"
+                           class="fa-solid fa-chevron-down text-xs text-brandPink transition-transform duration-300">
+                        </i>
+
+                    </button>
+
+                    <div id="mobileHomeMenu"
+                         class="max-h-0 overflow-hidden bg-white opacity-0 transition-all duration-500 dark:bg-black">
+
+                        <div class="space-y-2 p-3">
+
+                            <a href="../index.html"
+                               data-page="home1"
+                               class="mobile-nav-link flex items-center gap-4 rounded-2xl bg-pink-50 px-4 py-4 font-bold text-brandBrown transition hover:bg-brandPink hover:text-white dark:bg-zinc-900 dark:text-white">
+
+                                <i class="fa-solid fa-house w-5 text-brandPink"></i>
+
+                                <span>Home Page 1</span>
+
+                            </a>
+
+                            <a href="home.html"
+                               data-page="home2"
+                               class="mobile-nav-link flex items-center gap-4 rounded-2xl px-4 py-4 font-bold text-brandBrown transition hover:bg-brandTeal hover:text-white dark:text-white">
+
+                                <i class="fa-solid fa-wand-magic-sparkles w-5 text-brandTeal dark:text-brandMint"></i>
+
+                                <span>Home Page 2</span>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <a href="about.html"
+                   data-page="about"
+                   class="mobile-nav-link flex items-center gap-3 rounded-2xl px-5 py-4 font-bold text-brandBrown transition hover:bg-pink-50 hover:text-brandPink dark:text-white dark:hover:bg-zinc-900">
+
+                    <i class="fa-solid fa-circle-info w-5 text-brandPink"></i>
+
+                    <span>About</span>
+
+                </a>
+
+                <a href="menu.html"
+                   data-page="menu"
+                   class="mobile-nav-link flex items-center gap-3 rounded-2xl px-5 py-4 font-bold text-brandBrown transition hover:bg-pink-50 hover:text-brandPink dark:text-white dark:hover:bg-zinc-900">
+
+                    <i class="fa-solid fa-bowl-food w-5 text-brandPink"></i>
+
+                    <span>Menu</span>
+
+                </a>
+
+                <a href="specials.html"
+                   data-page="specials"
+                   class="mobile-nav-link flex items-center gap-3 rounded-2xl px-5 py-4 font-bold text-brandBrown transition hover:bg-pink-50 hover:text-brandPink dark:text-white dark:hover:bg-zinc-900">
+
+                    <i class="fa-solid fa-star w-5 text-brandPink"></i>
+
+                    <span>Specials</span>
+
+                </a>
+
+                <a href="gallery.html"
+                   data-page="gallery"
+                   class="mobile-nav-link flex items-center gap-3 rounded-2xl px-5 py-4 font-bold text-brandBrown transition hover:bg-pink-50 hover:text-brandPink dark:text-white dark:hover:bg-zinc-900">
+
+                    <i class="fa-solid fa-images w-5 text-brandPink"></i>
+
+                    <span>Gallery</span>
+
+                </a>
+
+                <a href="team.html"
+                   data-page="team"
+                   class="mobile-nav-link flex items-center gap-3 rounded-2xl px-5 py-4 font-bold text-brandBrown transition hover:bg-pink-50 hover:text-brandPink dark:text-white dark:hover:bg-zinc-900">
+
+                    <i class="fa-solid fa-user-group w-5 text-brandPink"></i>
+
+                    <span>Team</span>
+
+                </a>
+
+                <a href="contact.html"
+                   data-page="contact"
+                   class="mobile-nav-link flex items-center gap-3 rounded-2xl px-5 py-4 font-bold text-brandBrown transition hover:bg-pink-50 hover:text-brandPink dark:text-white dark:hover:bg-zinc-900">
+
+                    <i class="fa-solid fa-envelope w-5 text-brandPink"></i>
+
+                    <span>Contact</span>
+
+                </a>
+
+                <a href="#"
+                   data-page="menu"
+                   class="mobile-nav-link mt-4 flex items-center justify-center gap-3 rounded-2xl bg-brandTeal px-5 py-4 font-bold text-white shadow-lg transition hover:bg-brandPink">
+
+                    <span>Order Now</span>
+
+                    <i class="fa-solid fa-ice-cream"></i>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- Fixed header spacing -->
+
+<div class="h-[99px]"></div>
+
+
+
+<!-- ==================================================
+                     HOME 2 HERO SECTION
+================================================== -->
+
+<section class="relative min-h-[calc(100vh-99px)] overflow-hidden bg-brandBrown dark:bg-black">
+
+    <!-- Real background image -->
+
+    <img src="../assets/images/home2-hero.jpg"
+         alt="Colourful premium ice cream scoops served at Melt and Swirl"
+         class="absolute inset-0 h-full w-full object-cover object-center">
+
+    <!-- Responsive overlays -->
+
+    <div class="absolute inset-0 bg-gradient-to-r from-brandBrown/95 via-brandBrown/75 to-brandBrown/10 rtl:bg-gradient-to-l"></div>
+
+    <div class="absolute inset-0 bg-gradient-to-t from-brandBrown/70 via-transparent to-black/20"></div>
+
+
+    <!-- Decorative pattern -->
+
+    <div class="pointer-events-none absolute -start-20 -top-20 h-72 w-72 rounded-full border-[50px] border-brandPink/15"></div>
+
+    <div class="pointer-events-none absolute end-[8%] top-[15%] hidden h-24 w-24 rounded-full border-[18px] border-brandMint/20 lg:block"></div>
+
+
+    <div class="relative mx-auto flex min-h-[calc(100vh-99px)] max-w-[1600px] items-center px-5 py-16 sm:px-7 sm:py-20 lg:px-10">
+
+        <div class="w-full">
+
+            <div class="max-w-2xl">
+
+
+                <!-- Hero label -->
+
+                <div class="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-2.5 text-white backdrop-blur-md">
+
+                    <span class="flex h-8 w-8 items-center justify-center rounded-full bg-brandPink text-xs">
+
+                        <i class="fa-solid fa-ice-cream"></i>
+
+                    </span>
+
+                    <span class="text-xs font-bold uppercase tracking-[0.17em] sm:text-sm">
+                        Welcome to Melt &amp; Swirl
+                    </span>
+
+                </div>
+
+
+                <!-- Heading -->
+
+                <h1 class="mt-7 font-display text-4xl font-bold leading-[1.08] text-white sm:text-5xl lg:text-6xl">
+
+                    A little sweetness
+
+                    <span class="mt-2 block text-brandMint">
+                        changes everything.
+                    </span>
+
+                </h1>
+
+
+                <!-- Description -->
+
+                <p class="mt-6 max-w-xl text-sm leading-7 text-white/75 sm:text-base sm:leading-8">
+
+                    Step into a world of handcrafted ice creams, playful flavours
+                    and desserts made for sharing. Every visit brings a fresh reason
+                    to smile.
+
+                </p>
+
+
+                <!-- Buttons -->
+
+                <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+
+                    <a href="menu.html"
+                       class="group inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-full bg-brandPink px-7 py-4 text-sm font-bold text-white shadow-[0_15px_35px_rgba(248,87,139,0.30)] transition duration-300 hover:-translate-y-1 hover:bg-brandPinkDark sm:w-auto">
+
+                        Explore the Menu
+
+                        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-white/20 transition group-hover:translate-x-1 rtl:group-hover:-translate-x-1">
+
+                            <i class="fa-solid fa-arrow-right text-xs rtl:rotate-180"></i>
+
+                        </span>
+
+                    </a>
+
+                    <a href="gallery.html"
+                       class="inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-full border border-white/40 bg-white/10 px-7 py-4 text-sm font-bold text-white backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-white hover:bg-white hover:text-brandBrown sm:w-auto">
+
+                        <i class="fa-regular fa-images"></i>
+
+                        View Gallery
+
+                    </a>
+
+                </div>
+
+
+                <!-- Quick information -->
+
+                <div class="mt-10 grid max-w-xl grid-cols-1 gap-3 sm:grid-cols-3">
+
+                    <div class="flex items-center gap-3 rounded-2xl border border-white/15 bg-white/10 p-4 text-white backdrop-blur-md">
+
+                        <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brandPink text-sm">
+
+                            <i class="fa-solid fa-bowl-food"></i>
+
+                        </span>
+
+                        <div>
+
+                            <p class="font-display text-xl font-bold">
+                                25+
+                            </p>
+
+                            <p class="text-[11px] text-white/60">
+                                Flavours
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex items-center gap-3 rounded-2xl border border-white/15 bg-white/10 p-4 text-white backdrop-blur-md">
+
+                        <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brandTeal text-sm">
+
+                            <i class="fa-solid fa-star"></i>
+
+                        </span>
+
+                        <div>
+
+                            <p class="font-display text-xl font-bold">
+                                4.9
+                            </p>
+
+                            <p class="text-[11px] text-white/60">
+                                Rating
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex items-center gap-3 rounded-2xl border border-white/15 bg-white/10 p-4 text-white backdrop-blur-md">
+
+                        <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-400 text-sm text-brandBrown">
+
+                            <i class="fa-solid fa-leaf"></i>
+
+                        </span>
+
+                        <div>
+
+                            <p class="font-display text-xl font-bold">
+                                Fresh
+                            </p>
+
+                            <p class="text-[11px] text-white/60">
+                                Every day
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Floating store information -->
+
+    <div class="relative z-10 mx-5 -mt-6 pb-7 sm:mx-7 lg:absolute lg:bottom-8 lg:end-10 lg:m-0 lg:w-[370px] lg:p-0">
+
+        <div class="rounded-[26px] border border-white/30 bg-white/90 p-5 shadow-2xl backdrop-blur-xl dark:border-zinc-700 dark:bg-zinc-950/90 sm:p-6">
+
+            <div class="flex items-start gap-4">
+
+                <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brandMint text-brandTeal">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                </span>
+
+                <div class="min-w-0">
+
+                    <p class="text-xs font-bold uppercase tracking-[0.15em] text-brandPink">
+                        Visit us today
+                    </p>
+
+                    <h2 class="mt-1 font-display text-xl font-bold text-brandBrown dark:text-white">
+                        Your sweet escape awaits
+                    </h2>
+
+                    <p class="mt-2 text-xs leading-5 text-slate-500 dark:text-zinc-400">
+                        Open daily from 10:00 AM to 10:00 PM
+                    </p>
+
+                </div>
+
+            </div>
+
+            <a href="contact.html"
+               class="mt-5 flex w-full items-center justify-center gap-2 rounded-full bg-brandTeal px-5 py-3 text-sm font-bold text-white transition duration-300 hover:bg-brandPink">
+
+                Get Directions
+
+                <i class="fa-solid fa-location-arrow"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Scroll link -->
+
+    <a href="#home2NextSection"
+       aria-label="Move to the next section"
+       class="absolute bottom-8 start-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-white xl:flex">
+
+        <span class="text-[10px] font-bold uppercase tracking-[0.2em]">
+            Discover
+        </span>
+
+        <i class="fa-solid fa-chevron-down animate-bounce text-brandPink"></i>
+
+    </a>
+
+</section>
+
+
+<!----------------------------------->
+
+
+<!-- ==================================================
+                  HOME 2 STORY SECTION
+================================================== -->
+
+<section id="home2NextSection"
+         class="relative overflow-hidden bg-white py-20 dark:bg-black sm:py-24 lg:py-28">
+
+    <!-- Background decoration -->
+
+    <div class="pointer-events-none absolute -end-40 top-20 h-96 w-96 rounded-full bg-brandMint/50 blur-3xl dark:bg-brandTeal/10"></div>
+
+
+    <div class="relative mx-auto max-w-[1600px] px-5 sm:px-7 lg:px-10">
+
+        <div class="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+
+
+            <!-- Real image collage -->
+
+            <div class="relative mx-auto w-full max-w-[680px] pb-12 sm:pb-16">
+
+                <!-- Main image -->
+
+                <div class="relative h-[420px] overflow-hidden rounded-[30px] bg-brandCream shadow-[0_25px_65px_rgba(59,29,22,0.14)] sm:h-[560px] sm:rounded-[42px]">
+
+                    <img src="../assets/images/home2-story-main.jpg"
+                         alt="Melt and Swirl staff preparing fresh ice cream"
+                         loading="lazy"
+                         class="h-full w-full object-cover transition duration-700 hover:scale-105">
+
+                    <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-brandBrown/45 via-transparent to-transparent"></div>
+
+
+                    <!-- Image label -->
+
+                    <div class="absolute start-5 top-5 rounded-full border border-white/40 bg-white/90 px-4 py-2 text-xs font-bold text-brandBrown shadow-lg backdrop-blur-md sm:start-7 sm:top-7 dark:bg-black/80 dark:text-white">
+
+                        <i class="fa-solid fa-heart me-2 text-brandPink"></i>
+
+                        Handcrafted with care
+
+                    </div>
+
+                </div>
+
+
+                <!-- Small overlapping image -->
+
+                <div class="absolute -bottom-2 end-0 w-[58%] rounded-[26px] border-[7px] border-white bg-white p-2 shadow-2xl sm:w-[52%] sm:rounded-[34px] sm:border-[10px] dark:border-black dark:bg-black">
+
+                    <div class="h-44 overflow-hidden rounded-[18px] sm:h-60 sm:rounded-[24px]">
+
+                        <img src="../assets/images/home2-story-small.jpg"
+                             alt="Friends enjoying ice cream together"
+                             loading="lazy"
+                             class="h-full w-full object-cover transition duration-700 hover:scale-110">
+
+                    </div>
+
+                </div>
+
+
+                <!-- Experience badge -->
+
+                <div class="absolute bottom-5 start-4 flex h-28 w-28 flex-col items-center justify-center rounded-full border-8 border-white bg-brandPink text-center text-white shadow-xl sm:bottom-8 sm:start-7 sm:h-36 sm:w-36 dark:border-black">
+
+                    <span class="font-display text-3xl font-bold sm:text-4xl">
+                        8+
+                    </span>
+
+                    <span class="mt-1 text-[10px] font-bold uppercase tracking-[0.12em] sm:text-xs">
+                        Sweet Years
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Story content -->
+
+            <div>
+
+                <div class="inline-flex items-center gap-2 rounded-full bg-pink-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-brandPink dark:bg-zinc-900">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                    <span>Our Sweet Story</span>
+
+                </div>
+
+                <h2 class="mt-6 font-display text-3xl font-bold leading-tight text-brandBrown dark:text-white sm:text-4xl lg:text-5xl">
+
+                    Born from a love for
+
+                    <span class="text-brandPink">
+                        unforgettable flavours
+                    </span>
+
+                </h2>
+
+                <p class="mt-6 text-sm leading-7 text-slate-600 dark:text-zinc-400 sm:text-base">
+
+                    Melt &amp; Swirl began with one simple idea: ice cream should
+                    feel as special as the moments shared around it. What started
+                    as a small neighbourhood parlour has grown into a place where
+                    creativity and community come together.
+
+                </p>
+
+                <p class="mt-4 text-sm leading-7 text-slate-600 dark:text-zinc-400 sm:text-base">
+
+                    We continue to prepare our desserts in small batches, pairing
+                    familiar favourites with exciting seasonal flavours.
+
+                </p>
+
+
+                <!-- Features -->
+
+                <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+
+                    <div class="flex items-center gap-4 rounded-2xl border border-pink-100 p-4 dark:border-zinc-800">
+
+                        <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-pink-100 text-brandPink dark:bg-brandPink/10">
+
+                            <i class="fa-solid fa-bowl-food"></i>
+
+                        </span>
+
+                        <div>
+
+                            <h3 class="text-sm font-bold text-brandBrown dark:text-white">
+                                Small batches
+                            </h3>
+
+                            <p class="mt-1 text-xs text-slate-500 dark:text-zinc-400">
+                                Freshly made every day
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex items-center gap-4 rounded-2xl border border-teal-100 p-4 dark:border-zinc-800">
+
+                        <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brandMint text-brandTeal dark:bg-brandTeal/20 dark:text-brandMint">
+
+                            <i class="fa-solid fa-leaf"></i>
+
+                        </span>
+
+                        <div>
+
+                            <h3 class="text-sm font-bold text-brandBrown dark:text-white">
+                                Quality ingredients
+                            </h3>
+
+                            <p class="mt-1 text-xs text-slate-500 dark:text-zinc-400">
+                                Carefully selected flavours
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex items-center gap-4 rounded-2xl border border-amber-100 p-4 dark:border-zinc-800">
+
+                        <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-amber-600 dark:bg-amber-500/10">
+
+                            <i class="fa-solid fa-lightbulb"></i>
+
+                        </span>
+
+                        <div>
+
+                            <h3 class="text-sm font-bold text-brandBrown dark:text-white">
+                                Creative recipes
+                            </h3>
+
+                            <p class="mt-1 text-xs text-slate-500 dark:text-zinc-400">
+                                Something new to discover
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex items-center gap-4 rounded-2xl border border-purple-100 p-4 dark:border-zinc-800">
+
+                        <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-purple-100 text-purple-600 dark:bg-purple-500/10">
+
+                            <i class="fa-solid fa-people-group"></i>
+
+                        </span>
+
+                        <div>
+
+                            <h3 class="text-sm font-bold text-brandBrown dark:text-white">
+                                Community first
+                            </h3>
+
+                            <p class="mt-1 text-xs text-slate-500 dark:text-zinc-400">
+                                A place for sweet memories
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!---------------------------------------------------------->
+<!-- ==================================================
+                 BROWSE BY CRAVING SECTION
+================================================== -->
+
+<section class="relative overflow-hidden bg-brandCream py-20 dark:bg-zinc-950 sm:py-24 lg:py-28">
+
+    <div class="mx-auto max-w-[1600px] px-5 sm:px-7 lg:px-10">
+
+
+        <!-- Section heading -->
+
+        <div class="mx-auto max-w-3xl text-center">
+
+            <div class="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-brandPink shadow-sm dark:bg-zinc-900">
+
+                <i class="fa-solid fa-utensils"></i>
+
+                <span>Find Your Favourite</span>
+
+            </div>
+
+            <h2 class="mt-6 font-display text-3xl font-bold leading-tight text-brandBrown dark:text-white sm:text-4xl lg:text-5xl">
+
+                What are you
+
+                <span class="text-brandPink">
+                    craving today?
+                </span>
+
+            </h2>
+
+            <p class="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-zinc-400 sm:text-base">
+                From classic scoops to indulgent desserts, choose a category
+                and discover something delicious.
+            </p>
+
+        </div>
+
+
+        <!-- Asymmetrical image gallery -->
+
+        <div class="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-12 lg:grid-rows-2">
+
+
+            <!-- Scoops: large card -->
+
+            <a href="menu.html"
+               aria-label="View ice cream scoops"
+               class="group relative min-h-[430px] overflow-hidden rounded-[32px] md:col-span-2 lg:col-span-5 lg:row-span-2 lg:min-h-[650px]">
+
+                <img src="../assets/images/category-scoops.jpg"
+                     alt="Selection of colourful handcrafted ice cream scoops"
+                     loading="lazy"
+                     class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110">
+
+                <div class="absolute inset-0 bg-gradient-to-t from-brandBrown/90 via-brandBrown/15 to-transparent"></div>
+
+                <span class="absolute end-5 top-5 flex h-12 w-12 items-center justify-center rounded-full border border-white/40 bg-white/15 text-white backdrop-blur-md transition duration-300 group-hover:bg-brandPink group-hover:rotate-45">
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </span>
+
+                <div class="absolute inset-x-0 bottom-0 p-7 text-white sm:p-9">
+
+                    <span class="text-xs font-bold uppercase tracking-[0.18em] text-brandMint">
+                        12+ Flavours
+                    </span>
+
+                    <h3 class="mt-2 font-display text-3xl font-bold sm:text-4xl">
+                        Handcrafted Scoops
+                    </h3>
+
+                    <p class="mt-3 max-w-sm text-sm leading-6 text-white/70">
+                        Classic favourites and imaginative new flavours served
+                        in cups or crispy cones.
+                    </p>
+
+                    <span class="mt-5 inline-flex items-center gap-2 text-sm font-bold">
+
+                        Explore Scoops
+
+                        <i class="fa-solid fa-arrow-right transition group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1"></i>
+
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <!-- Sundaes -->
+
+            <a href="menu.html"
+               aria-label="View ice cream sundaes"
+               class="group relative min-h-[310px] overflow-hidden rounded-[32px] lg:col-span-4">
+
+                <img src="../assets/images/category-sundaes.jpg"
+                     alt="Premium ice cream sundae with sauces and toppings"
+                     loading="lazy"
+                     class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110">
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+
+                <span class="absolute end-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-brandPink shadow-lg transition duration-300 group-hover:bg-brandPink group-hover:text-white">
+
+                    <i class="fa-solid fa-arrow-right rtl:rotate-180"></i>
+
+                </span>
+
+                <div class="absolute inset-x-0 bottom-0 p-6 text-white sm:p-7">
+
+                    <p class="text-xs font-bold uppercase tracking-[0.16em] text-pink-200">
+                        Loaded with toppings
+                    </p>
+
+                    <h3 class="mt-2 font-display text-2xl font-bold sm:text-3xl">
+                        Signature Sundaes
+                    </h3>
+
+                </div>
+
+            </a>
+
+
+            <!-- Shakes -->
+
+            <a href="menu.html"
+               aria-label="View creamy milkshakes"
+               class="group relative min-h-[310px] overflow-hidden rounded-[32px] lg:col-span-3">
+
+                <img src="../assets/images/category-shakes.jpg"
+                     alt="Creamy flavoured milkshakes"
+                     loading="lazy"
+                     class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110">
+
+                <div class="absolute inset-0 bg-gradient-to-t from-brandTeal/95 via-brandTeal/10 to-transparent"></div>
+
+                <span class="absolute end-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-brandTeal shadow-lg transition duration-300 group-hover:bg-brandTeal group-hover:text-white">
+
+                    <i class="fa-solid fa-arrow-right rtl:rotate-180"></i>
+
+                </span>
+
+                <div class="absolute inset-x-0 bottom-0 p-6 text-white sm:p-7">
+
+                    <p class="text-xs font-bold uppercase tracking-[0.16em] text-brandMint">
+                        Thick and creamy
+                    </p>
+
+                    <h3 class="mt-2 font-display text-2xl font-bold sm:text-3xl">
+                        Dreamy Shakes
+                    </h3>
+
+                </div>
+
+            </a>
+
+
+            <!-- Desserts: wide card -->
+
+            <a href="menu.html"
+               aria-label="View ice cream desserts"
+               class="group relative min-h-[310px] overflow-hidden rounded-[32px] md:col-span-2 lg:col-span-7">
+
+                <img src="../assets/images/category-desserts.jpg"
+                     alt="Assorted ice cream desserts and waffles"
+                     loading="lazy"
+                     class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110">
+
+                <div class="absolute inset-0 bg-gradient-to-r from-brandBrown/90 via-brandBrown/45 to-transparent rtl:bg-gradient-to-l"></div>
+
+                <div class="absolute inset-y-0 start-0 flex max-w-md flex-col justify-center p-7 text-white sm:p-9">
+
+                    <p class="text-xs font-bold uppercase tracking-[0.16em] text-amber-300">
+                        Something extra special
+                    </p>
+
+                    <h3 class="mt-2 font-display text-2xl font-bold sm:text-3xl">
+                        Waffles &amp; Desserts
+                    </h3>
+
+                    <p class="mt-3 hidden text-sm leading-6 text-white/70 sm:block">
+                        Warm waffles, decadent brownies and beautifully layered
+                        desserts made for sharing.
+                    </p>
+
+                    <span class="mt-5 inline-flex items-center gap-2 text-sm font-bold">
+
+                        Discover Desserts
+
+                        <i class="fa-solid fa-arrow-right transition group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1"></i>
+
+                    </span>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- Menu button -->
+
+        <div class="mt-10 text-center">
+
+            <a href="menu.html"
+               class="inline-flex w-full items-center justify-center gap-3 rounded-full bg-brandPink px-8 py-4 text-sm font-bold text-white shadow-[0_14px_35px_rgba(248,87,139,0.25)] transition duration-300 hover:-translate-y-1 hover:bg-brandPinkDark sm:w-auto">
+
+                Browse Our Full Menu
+
+                <i class="fa-solid fa-arrow-right rtl:rotate-180"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+<!---------------------------------------------------------------------------->
+<!-- ==================================================
+                  MEET THE MAKERS SECTION
+================================================== -->
+
+<section class="relative overflow-hidden bg-white py-20 dark:bg-black sm:py-24 lg:py-28">
+
+    <div class="mx-auto max-w-[1600px] px-5 sm:px-7 lg:px-10">
+
+
+        <!-- Main image composition -->
+
+        <div class="relative min-h-[680px] overflow-hidden rounded-[36px] bg-brandBrown shadow-[0_30px_80px_rgba(59,29,22,0.16)] sm:min-h-[720px] lg:min-h-[700px] lg:rounded-[50px]">
+
+            <!-- Real team image -->
+
+            <img src="../assets/images/home2-team.jpg"
+                 alt="Melt and Swirl dessert team inside the ice cream parlour"
+                 loading="lazy"
+                 class="absolute inset-0 h-full w-full object-cover object-center transition duration-1000 hover:scale-105">
+
+            <!-- Image overlays -->
+
+            <div class="absolute inset-0 bg-gradient-to-t from-brandBrown/95 via-brandBrown/20 to-transparent"></div>
+
+            <div class="absolute inset-0 bg-gradient-to-r from-brandBrown/55 via-transparent to-transparent rtl:bg-gradient-to-l"></div>
+
+
+            <!-- Top label -->
+
+            <div class="absolute start-5 top-5 inline-flex items-center gap-3 rounded-full border border-white/30 bg-white/90 px-4 py-2.5 shadow-lg backdrop-blur-md sm:start-8 sm:top-8 dark:bg-black/80">
+
+                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-brandPink text-xs text-white">
+
+                    <i class="fa-solid fa-user-group"></i>
+
+                </span>
+
+                <span class="text-xs font-bold uppercase tracking-[0.16em] text-brandBrown dark:text-white">
+                    The People Behind Every Scoop
+                </span>
+
+            </div>
+
+
+            <!-- Experience badge -->
+
+            <div class="absolute end-5 top-5 hidden h-32 w-32 flex-col items-center justify-center rounded-full border border-white/30 bg-brandPink/90 text-center text-white shadow-xl backdrop-blur-md sm:flex lg:end-10 lg:top-10 lg:h-36 lg:w-36">
+
+                <span class="font-display text-3xl font-bold lg:text-4xl">
+                    100%
+                </span>
+
+                <span class="mt-1 text-[10px] font-bold uppercase tracking-[0.14em]">
+                    Made with care
+                </span>
+
+            </div>
+
+
+            <!-- Bottom content -->
+
+            <div class="absolute inset-x-0 bottom-0 p-5 sm:p-8 lg:p-12">
+
+                <div class="grid items-end gap-7 lg:grid-cols-[1fr_auto]">
+
+
+                    <!-- Text -->
+
+                    <div class="max-w-3xl text-white">
+
+                        <p class="text-xs font-bold uppercase tracking-[0.2em] text-brandMint">
+                            Meet Our Makers
+                        </p>
+
+                        <h2 class="mt-4 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+                            Passion, creativity and care in every creation
+                        </h2>
+
+                        <p class="mt-5 max-w-2xl text-sm leading-7 text-white/70 sm:text-base">
+                            Our talented team brings together flavour expertise,
+                            friendly service and a genuine love for creating desserts
+                            that make people happy.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Button -->
+
+                    <a href="team.html"
+                       class="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-brandPink px-7 py-4 text-sm font-bold text-white shadow-[0_15px_35px_rgba(248,87,139,0.30)] transition duration-300 hover:-translate-y-1 hover:bg-brandPinkDark sm:w-auto">
+
+                        Meet the Full Team
+
+                        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-white/20 transition group-hover:translate-x-1 rtl:group-hover:-translate-x-1">
+
+                            <i class="fa-solid fa-arrow-right text-xs rtl:rotate-180"></i>
+
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+                <!-- Team qualities -->
+
+                <div class="mt-8 grid grid-cols-1 gap-3 border-t border-white/15 pt-7 sm:grid-cols-3">
+
+                    <div class="flex items-center gap-3 rounded-2xl bg-white/10 p-4 text-white backdrop-blur-md">
+
+                        <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brandPink">
+
+                            <i class="fa-solid fa-heart"></i>
+
+                        </span>
+
+                        <div>
+
+                            <p class="text-sm font-bold">
+                                Passionate
+                            </p>
+
+                            <p class="mt-1 text-xs text-white/55">
+                                We love what we create
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex items-center gap-3 rounded-2xl bg-white/10 p-4 text-white backdrop-blur-md">
+
+                        <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brandTeal">
+
+                            <i class="fa-solid fa-lightbulb"></i>
+
+                        </span>
+
+                        <div>
+
+                            <p class="text-sm font-bold">
+                                Creative
+                            </p>
+
+                            <p class="mt-1 text-xs text-white/55">
+                                New ideas in every flavour
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex items-center gap-3 rounded-2xl bg-white/10 p-4 text-white backdrop-blur-md">
+
+                        <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-400 text-brandBrown">
+
+                            <i class="fa-solid fa-face-smile"></i>
+
+                        </span>
+
+                        <div>
+
+                            <p class="text-sm font-bold">
+                                Welcoming
+                            </p>
+
+                            <p class="mt-1 text-xs text-white/55">
+                                Service with a smile
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-------------------------------------------------------------------------------------->
+
+<!-- ==================================================
+               CUSTOMER EXPERIENCE SECTION
+================================================== -->
+
+<section class="relative overflow-hidden bg-brandCream py-20 dark:bg-zinc-950 sm:py-24 lg:py-28">
+
+    <!-- Background decoration -->
+
+    <div class="pointer-events-none absolute -start-40 bottom-0 h-96 w-96 rounded-full bg-brandMint/70 blur-3xl dark:bg-brandTeal/10"></div>
+
+    <div class="pointer-events-none absolute -end-32 top-0 h-80 w-80 rounded-full bg-brandPink/10 blur-3xl"></div>
+
+
+    <div class="relative mx-auto max-w-[1600px] px-5 sm:px-7 lg:px-10">
+
+        <div class="overflow-hidden rounded-[36px] bg-white shadow-[0_25px_70px_rgba(59,29,22,0.10)] dark:bg-black lg:rounded-[50px]">
+
+            <div class="grid lg:grid-cols-[1fr_0.9fr]">
+
+
+                <!-- Testimonial content -->
+
+                <div class="relative flex items-center px-6 py-14 sm:px-10 sm:py-16 lg:px-14 lg:py-20 xl:px-20">
+
+                    <!-- Large quote decoration -->
+
+                    <i class="fa-solid fa-quote-left pointer-events-none absolute end-8 top-8 text-7xl text-brandPink/10 sm:text-8xl"></i>
+
+
+                    <div class="relative z-10">
+
+                        <div class="inline-flex items-center gap-2 rounded-full bg-pink-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-brandPink dark:bg-zinc-900">
+
+                            <i class="fa-solid fa-comments"></i>
+
+                            <span>Sweet Words</span>
+
+                        </div>
+
+                        <h2 class="mt-6 font-display text-3xl font-bold leading-tight text-brandBrown dark:text-white sm:text-4xl lg:text-5xl">
+
+                            Moments our customers
+
+                            <span class="text-brandPink">
+                                love to share
+                            </span>
+
+                        </h2>
+
+
+                        <!-- Rating -->
+
+                        <div class="mt-7 flex flex-wrap items-center gap-3">
+
+                            <div class="flex gap-1 text-sm text-amber-400">
+
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+
+                            </div>
+
+                            <span class="text-sm font-bold text-brandBrown dark:text-white">
+                                5.0
+                            </span>
+
+                            <span class="text-sm text-slate-400">
+                                from verified customers
+                            </span>
+
+                        </div>
+
+
+                        <!-- Featured quote -->
+
+                        <blockquote class="mt-7 max-w-2xl font-display text-xl font-semibold leading-9 text-brandBrown dark:text-white sm:text-2xl">
+
+                            “The flavours were incredible, but the warm atmosphere
+                            made our evening truly special. The Berry Bliss sundae
+                            is now our family favourite.”
+
+                        </blockquote>
+
+
+                        <!-- Customer information -->
+
+                        <div class="mt-7 flex items-center gap-4">
+
+                            <span class="flex h-12 w-12 items-center justify-center rounded-full bg-brandPink text-sm font-bold text-white">
+                                AP
+                            </span>
+
+                            <div>
+
+                                <p class="font-bold text-brandBrown dark:text-white">
+                                    Ananya Patel
+                                </p>
+
+                                <p class="mt-1 text-xs text-slate-500 dark:text-zinc-400">
+                                    Regular customer
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Divider -->
+
+                        <div class="my-9 h-px bg-pink-100 dark:bg-zinc-800"></div>
+
+
+                        <!-- Statistics -->
+
+                        <div class="grid grid-cols-3 gap-3">
+
+                            <div>
+
+                                <p class="font-display text-2xl font-bold text-brandPink sm:text-3xl">
+                                    2.5K+
+                                </p>
+
+                                <p class="mt-1 text-[11px] text-slate-500 dark:text-zinc-400 sm:text-xs">
+                                    Happy guests
+                                </p>
+
+                            </div>
+
+                            <div class="border-x border-pink-100 px-4 dark:border-zinc-800">
+
+                                <p class="font-display text-2xl font-bold text-brandTeal dark:text-brandMint sm:text-3xl">
+                                    4.9
+                                </p>
+
+                                <p class="mt-1 text-[11px] text-slate-500 dark:text-zinc-400 sm:text-xs">
+                                    Average rating
+                                </p>
+
+                            </div>
+
+                            <div>
+
+                                <p class="font-display text-2xl font-bold text-amber-500 sm:text-3xl">
+                                    98%
+                                </p>
+
+                                <p class="mt-1 text-[11px] text-slate-500 dark:text-zinc-400 sm:text-xs">
+                                    Visit us again
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Relevant page button -->
+
+                        <a href="gallery.html"
+                           class="group mt-9 inline-flex w-full items-center justify-center gap-3 rounded-full bg-brandTeal px-7 py-4 text-sm font-bold text-white transition duration-300 hover:-translate-y-1 hover:bg-brandPink sm:w-auto">
+
+                            See More Sweet Moments
+
+                            <i class="fa-solid fa-arrow-right transition group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Real customer image -->
+
+                <div class="relative min-h-[430px] overflow-hidden sm:min-h-[560px] lg:min-h-full">
+
+                    <img src="../assets/images/home2-customer.jpg"
+                         alt="Friends enjoying desserts together at Melt and Swirl"
+                         loading="lazy"
+                         class="absolute inset-0 h-full w-full object-cover transition duration-1000 hover:scale-105">
+
+                    <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-brandBrown/65 via-transparent to-transparent"></div>
+
+
+                    <!-- Image message -->
+
+                    <div class="absolute inset-x-5 bottom-5 rounded-[24px] border border-white/30 bg-black/30 p-5 text-white shadow-xl backdrop-blur-md sm:inset-x-8 sm:bottom-8 sm:p-6">
+
+                        <div class="flex items-start gap-4">
+
+                            <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brandPink">
+
+                                <i class="fa-solid fa-heart"></i>
+
+                            </span>
+
+                            <div>
+
+                                <p class="font-display text-xl font-bold">
+                                    Made for sharing
+                                </p>
+
+                                <p class="mt-2 text-sm leading-6 text-white/70">
+                                    Good desserts become great memories when
+                                    enjoyed together.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!------------------------------------------------------>
+<!-- ==================================================
+                 VISIT OUR PARLOUR CTA
+================================================== -->
+
+<section class="bg-white px-5 py-20 dark:bg-black sm:px-7 sm:py-24 lg:px-10 lg:py-28">
+
+    <div class="relative mx-auto min-h-[620px] max-w-[1600px] overflow-hidden rounded-[36px] bg-brandBrown lg:min-h-[580px] lg:rounded-[50px]">
+
+        <!-- Real background image -->
+
+        <img src="../assets/images/home2-parlour-cta.jpg"
+             alt="Interior of the Melt and Swirl ice cream parlour"
+             loading="lazy"
+             class="absolute inset-0 h-full w-full object-cover transition duration-1000 hover:scale-105">
+
+        <!-- Background overlays -->
+
+        <div class="absolute inset-0 bg-gradient-to-r from-brandBrown/95 via-brandBrown/70 to-brandBrown/15 rtl:bg-gradient-to-l"></div>
+
+        <div class="absolute inset-0 bg-gradient-to-t from-brandBrown/70 via-transparent to-black/10"></div>
+
+
+        <!-- Decorations -->
+
+        <div class="pointer-events-none absolute -start-20 -top-20 h-64 w-64 rounded-full border-[40px] border-brandPink/15"></div>
+
+        <div class="pointer-events-none absolute end-10 top-10 hidden h-24 w-24 rounded-full border-[16px] border-brandMint/20 lg:block"></div>
+
+
+        <div class="relative flex min-h-[620px] items-center px-6 py-14 sm:px-10 lg:min-h-[580px] lg:px-16 xl:px-24">
+
+            <div class="w-full max-w-2xl text-white">
+
+                <!-- Label -->
+
+                <div class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] backdrop-blur-md">
+
+                    <i class="fa-solid fa-location-dot text-brandPink"></i>
+
+                    <span>Visit Melt &amp; Swirl</span>
+
+                </div>
+
+
+                <!-- Heading -->
+
+                <h2 class="mt-6 font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+
+                    Your next sweet memory
+
+                    <span class="block text-brandMint">
+                        starts right here
+                    </span>
+
+                </h2>
+
+
+                <!-- Description -->
+
+                <p class="mt-5 max-w-xl text-sm leading-7 text-white/70 sm:text-base">
+
+                    Bring your friends, family or simply your love for dessert.
+                    Our team is ready to serve fresh flavours and make your visit
+                    wonderfully memorable.
+
+                </p>
+
+
+                <!-- Information -->
+
+                <div class="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
+
+                    <div class="flex items-center gap-4 rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-md">
+
+                        <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brandPink">
+
+                            <i class="fa-solid fa-clock"></i>
+
+                        </span>
+
+                        <div>
+
+                            <p class="text-xs text-white/55">
+                                Open every day
+                            </p>
+
+                            <p class="mt-1 text-sm font-bold">
+                                10:00 AM – 10:00 PM
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="flex items-center gap-4 rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-md">
+
+                        <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brandTeal">
+
+                            <i class="fa-solid fa-phone"></i>
+
+                        </span>
+
+                        <div>
+
+                            <p class="text-xs text-white/55">
+                                Call our parlour
+                            </p>
+
+                            <a href="tel:+919876543210"
+                               class="mt-1 block text-sm font-bold transition hover:text-brandMint">
+                                +91 98765 43210
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Buttons -->
+
+                <div class="mt-9 flex flex-col gap-4 sm:flex-row">
+
+                    <a href="contact.html"
+                       class="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-brandPink px-7 py-4 text-sm font-bold text-white shadow-[0_15px_35px_rgba(248,87,139,0.30)] transition duration-300 hover:-translate-y-1 hover:bg-brandPinkDark sm:w-auto">
+
+                        Get Directions
+
+                        <i class="fa-solid fa-location-arrow"></i>
+
+                    </a>
+
+                    <a href="menu.html"
+                       class="inline-flex w-full items-center justify-center gap-3 rounded-full border border-white/40 bg-white/10 px-7 py-4 text-sm font-bold text-white backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:bg-white hover:text-brandBrown sm:w-auto">
+
+                        View Our Menu
+
+                        <i class="fa-solid fa-arrow-right rtl:rotate-180"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Address card -->
+
+        <div class="absolute inset-x-5 bottom-5 rounded-[24px] border border-white/30 bg-white/90 p-5 shadow-2xl backdrop-blur-xl sm:inset-x-auto sm:bottom-8 sm:end-8 sm:w-[350px] dark:border-zinc-700 dark:bg-zinc-950/90">
+
+            <div class="flex items-start gap-4">
+
+                <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brandMint text-brandTeal">
+
+                    <i class="fa-solid fa-map-pin"></i>
+
+                </span>
+
+                <div>
+
+                    <p class="text-xs font-bold uppercase tracking-[0.15em] text-brandPink">
+                        Our Location
+                    </p>
+
+                    <address class="mt-2 text-sm font-semibold not-italic leading-6 text-brandBrown dark:text-white">
+                        24 Sweet Street, Bangalore,<br>
+                        Karnataka 560001
+                    </address>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!------------------------------------------------------------------------->
+</main>
+
+
+<!-- Same script path works from every page -->
+<script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

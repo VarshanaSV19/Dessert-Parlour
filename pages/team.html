@@ -1,0 +1,719 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Melt & Swirl is a modern ice cream and dessert parlour offering handcrafted scoops, sundaes, shakes and desserts.">
+
+    <title>Home | Melt & Swirl</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Pacifico&family=Playfair+Display:wght@600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+
+            theme: {
+                extend: {
+                    colors: {
+                        brandPink: "#F8578B",
+                        brandPinkDark: "#E83F78",
+                        brandMint: "#C9F3ED",
+                        brandTeal: "#075E5A",
+                        brandBrown: "#3B1D16",
+                        brandCream: "#FFF8F3"
+                    },
+
+                    fontFamily: {
+                        sans: ["DM Sans", "sans-serif"],
+                        display: ["Playfair Display", "serif"],
+                        logo: ["Pacifico", "cursive"]
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            inset-inline-start: 0;
+            bottom: -8px;
+            width: 0;
+            height: 2px;
+            border-radius: 999px;
+            background-color: #F8578B;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .desktop-dropdown {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transform: translateY(14px);
+            transition:
+                opacity 0.25s ease,
+                visibility 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .desktop-dropdown.dropdown-open {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .mobile-menu-open {
+            max-height: 900px !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .mobile-dropdown-open {
+            max-height: 350px !important;
+            opacity: 1 !important;
+        }
+
+        .loader-hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loader-logo {
+            animation: loaderFloat 0.8s ease-in-out infinite alternate;
+        }
+
+        @keyframes loaderFloat {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-12px);
+            }
+        }
+    </style>
+
+</head>
+
+<body class="bg-white font-sans text-slate-900 transition-colors duration-300 dark:bg-black dark:text-white">
+
+
+<!-- ==================================================
+                         LOADER
+================================================== -->
+
+<div id="pageLoader"
+     class="fixed inset-0 z-[9999] flex items-center justify-center bg-brandCream transition-all duration-700 dark:bg-black">
+
+    <div class="text-center">
+
+        <div class="loader-logo mx-auto flex h-24 w-24 items-center justify-center rounded-[30px] bg-white shadow-xl dark:bg-zinc-900">
+
+            <svg viewBox="0 0 100 125"
+                 class="h-20 w-16"
+                 aria-hidden="true">
+
+                <path d="M31 68 L69 68 L58 113 Q50 121 42 113 Z"
+                      fill="#D99A5E">
+                </path>
+
+                <path d="M35 79 L62 101"
+                      stroke="#A76A35"
+                      stroke-width="3">
+                </path>
+
+                <path d="M63 79 L38 102"
+                      stroke="#A76A35"
+                      stroke-width="3">
+                </path>
+
+                <path d="M50 8
+                         C69 8 77 20 68 33
+                         C84 36 86 52 74 61
+                         C70 65 66 68 61 68
+                         H38
+                         C33 68 29 66 25 62
+                         C14 52 17 37 31 33
+                         C23 20 32 8 50 8Z"
+                      fill="#FFF2DF">
+                </path>
+
+                <path d="M27 42
+                         C38 47 61 46 73 40
+                         C83 48 79 61 68 66
+                         C62 69 58 67 54 68
+                         H38
+                         C32 68 27 65 23 60
+                         C17 52 19 46 27 42Z"
+                      fill="#F8578B">
+                </path>
+
+                <path d="M34 63 C34 76 42 78 45 66"
+                      fill="#E83F78">
+                </path>
+
+                <path d="M53 66 C54 80 63 79 64 65"
+                      fill="#E83F78">
+                </path>
+
+                <path d="M38 28
+                         C46 31 56 30 65 25
+                         C64 34 58 39 48 40
+                         C42 40 37 35 38 28Z"
+                      fill="#5A2A1D">
+                </path>
+
+            </svg>
+
+        </div>
+
+        <h2 class="mt-6 font-logo text-4xl text-brandBrown dark:text-white">
+
+            Melt
+
+            <span class="text-brandPink">
+                &amp;
+            </span>
+
+            Swirl
+
+        </h2>
+
+        <p class="mt-2 text-sm font-semibold text-slate-500 dark:text-zinc-400">
+            Sweet moments are loading...
+        </p>
+
+        <div class="mx-auto mt-5 h-1.5 w-56 overflow-hidden rounded-full bg-pink-100 dark:bg-zinc-800">
+
+            <div id="loaderProgress"
+                 class="h-full w-0 rounded-full bg-brandPink transition-all duration-300">
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ==================================================
+                     FULL-WIDTH HEADER
+================================================== -->
+
+<header id="mainHeader"
+        class="fixed inset-x-0 top-0 z-50 border-b border-teal-900/10 bg-brandMint/95 shadow-[0_8px_35px_rgba(7,94,90,0.10)] backdrop-blur-xl transition-all duration-300 dark:border-zinc-800 dark:bg-black/95">
+
+    <div class="h-1 w-full bg-gradient-to-r from-brandPink via-pink-300 to-brandTeal">
+    </div>
+
+    <div class="mx-auto flex min-h-[94px] max-w-[1600px] items-center justify-between gap-5 px-5 sm:px-7 lg:px-10">
+
+        <!-- Logo -->
+
+        <a href="#"
+           data-page="home1"
+           class="group flex shrink-0 items-center gap-3">
+
+            <div class="flex h-[66px] w-[58px] items-center justify-center transition duration-300 group-hover:-rotate-3 group-hover:scale-105">
+
+                <svg viewBox="0 0 100 125"
+                     class="h-full w-full drop-shadow-md"
+                     aria-hidden="true">
+
+                    <path d="M31 68 L69 68 L58 113 Q50 121 42 113 Z"
+                          fill="#D99A5E">
+                    </path>
+
+                    <path d="M35 79 L62 101"
+                          stroke="#A76A35"
+                          stroke-width="3">
+                    </path>
+
+                    <path d="M63 79 L38 102"
+                          stroke="#A76A35"
+                          stroke-width="3">
+                    </path>
+
+                    <path d="M50 8
+                             C69 8 77 20 68 33
+                             C84 36 86 52 74 61
+                             C70 65 66 68 61 68
+                             H38
+                             C33 68 29 66 25 62
+                             C14 52 17 37 31 33
+                             C23 20 32 8 50 8Z"
+                          fill="#FFF2DF">
+                    </path>
+
+                    <path d="M27 42
+                             C38 47 61 46 73 40
+                             C83 48 79 61 68 66
+                             C62 69 58 67 54 68
+                             H38
+                             C32 68 27 65 23 60
+                             C17 52 19 46 27 42Z"
+                          fill="#F8578B">
+                    </path>
+
+                    <path d="M34 63 C34 76 42 78 45 66"
+                          fill="#E83F78">
+                    </path>
+
+                    <path d="M53 66 C54 80 63 79 64 65"
+                          fill="#E83F78">
+                    </path>
+
+                    <path d="M38 28
+                             C46 31 56 30 65 25
+                             C64 34 58 39 48 40
+                             C42 40 37 35 38 28Z"
+                          fill="#5A2A1D">
+                    </path>
+
+                </svg>
+
+            </div>
+
+            <div class="leading-none">
+
+                <h1 class="font-logo text-[25px] text-brandBrown dark:text-white sm:text-[30px]">
+
+                    Melt
+
+                    <span class="text-brandPink">
+                        &amp;
+                    </span>
+
+                    Swirl
+
+                </h1>
+
+                <p class="mt-2 hidden text-[9px] font-bold uppercase tracking-[0.22em] text-brandTeal dark:text-zinc-400 sm:block">
+                    Ice Cream &amp; Dessert Parlour
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <!-- Desktop navigation -->
+
+        <nav class="hidden xl:block"
+             aria-label="Main navigation">
+
+            <ul class="flex items-center gap-7 2xl:gap-9">
+
+                <!-- Home dropdown -->
+
+                <li class="relative">
+
+                    <button id="desktopHomeButton"
+                            type="button"
+                            aria-expanded="false"
+                            class="nav-link relative flex items-center gap-2 py-3 text-sm font-bold text-brandBrown transition hover:text-brandPink dark:text-white dark:hover:text-brandPink">
+
+                        <span>Home</span>
+
+                        <i id="desktopHomeArrow"
+                           class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300">
+                        </i>
+
+                    </button>
+
+                    <div id="desktopHomeMenu"
+                         class="desktop-dropdown absolute start-1/2 top-full z-50 w-[285px] -translate-x-1/2 pt-5 rtl:translate-x-1/2">
+
+                        <div class="rounded-[24px] border border-pink-100 bg-white p-3 shadow-[0_20px_60px_rgba(59,29,22,0.18)] dark:border-zinc-800 dark:bg-zinc-950">
+
+                            <a href="../index.html"
+                               data-page="home1"
+                               class="group flex items-center gap-4 rounded-[18px] bg-pink-50 p-4 transition duration-300 hover:bg-brandPink dark:bg-zinc-900 dark:hover:bg-brandPink">
+
+                                <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white text-brandPink shadow-sm dark:bg-black">
+
+                                    <i class="fa-solid fa-house"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h3 class="text-sm font-bold text-brandBrown transition group-hover:text-white dark:text-white">
+                                        Home Page 1
+                                    </h3>
+
+                                    <p class="mt-1 text-[11px] text-slate-500 transition group-hover:text-white/80 dark:text-zinc-400">
+                                        Classic parlour experience
+                                    </p>
+
+                                </div>
+
+                            </a>
+
+                            <a href="home.html"
+                               data-page="home2"
+                               class="group mt-2 flex items-center gap-4 rounded-[18px] p-4 transition duration-300 hover:bg-brandTeal">
+
+                                <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-brandTeal shadow-sm dark:bg-zinc-900 dark:text-brandMint">
+
+                                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h3 class="text-sm font-bold text-brandBrown transition group-hover:text-white dark:text-white">
+                                        Home Page 2
+                                    </h3>
+
+                                    <p class="mt-1 text-[11px] text-slate-500 transition group-hover:text-white/80 dark:text-zinc-400">
+                                        Creative dessert discovery
+                                    </p>
+
+                                </div>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </li>
+
+                <li>
+                    <a href="about.html"
+                       data-page="about"
+                       class="nav-link relative py-3 text-sm font-bold text-brandBrown transition hover:text-brandPink dark:text-white">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="menu.html"
+                       data-page="menu"
+                       class="nav-link relative py-3 text-sm font-bold text-brandBrown transition hover:text-brandPink dark:text-white">
+                        Menu
+                    </a>
+                </li>
+
+                <li>
+                    <a href="specials.html"
+                       data-page="specials"
+                       class="nav-link relative py-3 text-sm font-bold text-brandBrown transition hover:text-brandPink dark:text-white">
+                        Specials
+                    </a>
+                </li>
+
+                <li>
+                    <a href="gallery.html"
+                       data-page="gallery"
+                       class="nav-link relative py-3 text-sm font-bold text-brandBrown transition hover:text-brandPink dark:text-white">
+                        Gallery
+                    </a>
+                </li>
+
+                <li>
+                    <a href="team.html"
+                       data-page="team"
+                       class="nav-link relative py-3 text-sm font-bold text-brandBrown transition hover:text-brandPink dark:text-white">
+                        Team
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html"
+                       data-page="contact"
+                       class="nav-link relative py-3 text-sm font-bold text-brandBrown transition hover:text-brandPink dark:text-white">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <!-- Header buttons -->
+
+        <div class="flex shrink-0 items-center gap-2 sm:gap-3">
+
+            <!-- Dark mode -->
+
+            <button id="themeToggle"
+                    type="button"
+                    aria-label="Switch colour theme"
+                    class="flex h-11 w-11 items-center justify-center rounded-full border border-brandTeal/20 bg-white text-lg text-brandTeal shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brandPink hover:text-brandPink dark:border-zinc-700 dark:bg-zinc-900 dark:text-yellow-300">
+
+                <i id="themeIcon"
+                   class="fa-solid fa-moon">
+                </i>
+
+            </button>
+
+            <!-- RTL button -->
+
+            <button id="directionToggle"
+                    type="button"
+                    aria-label="Switch page direction"
+                    class="flex h-11 items-center justify-center gap-2 rounded-full border border-brandPink px-3 text-brandPink transition duration-300 hover:-translate-y-1 hover:bg-brandPink hover:text-white">
+
+                <i class="fa-solid fa-language text-lg"></i>
+
+                <span id="directionText"
+                      class="hidden text-xs font-bold sm:inline">
+                    RTL
+                </span>
+
+            </button>
+
+            <!-- CTA -->
+
+            <a href="#"
+               data-page="menu"
+               class="hidden items-center gap-2 rounded-full bg-brandTeal px-6 py-3 text-sm font-bold text-white shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-brandPink lg:flex">
+
+                <span>Order Now</span>
+
+                <i class="fa-solid fa-ice-cream"></i>
+
+            </a>
+
+            <!-- Mobile menu button -->
+
+            <button id="mobileMenuButton"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    class="flex h-11 w-11 items-center justify-center rounded-full bg-brandTeal text-lg text-white shadow-md transition duration-300 hover:bg-brandPink xl:hidden">
+
+                <i id="mobileMenuIcon"
+                   class="fa-solid fa-bars">
+                </i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Mobile navigation -->
+
+    <div id="mobileMenu"
+         class="invisible max-h-0 overflow-hidden border-t border-teal-900/10 bg-white opacity-0 transition-all duration-500 dark:border-zinc-800 dark:bg-black xl:hidden">
+
+        <nav class="mx-auto max-w-[1600px] px-5 py-5 sm:px-7">
+
+            <div class="space-y-2">
+
+                <!-- Mobile Home dropdown -->
+
+                <div class="overflow-hidden rounded-2xl border border-pink-100 dark:border-zinc-800">
+
+                    <button id="mobileHomeButton"
+                            type="button"
+                            aria-expanded="false"
+                            class="flex w-full items-center justify-between bg-pink-50 px-5 py-4 text-start font-bold text-brandBrown dark:bg-zinc-900 dark:text-white">
+
+                        <span class="flex items-center gap-3">
+
+                            <i class="fa-solid fa-house text-brandPink"></i>
+
+                            <span>Home</span>
+
+                        </span>
+
+                        <i id="mobileHomeArrow"
+                           class="fa-solid fa-chevron-down text-xs text-brandPink transition-transform duration-300">
+                        </i>
+
+                    </button>
+
+                    <div id="mobileHomeMenu"
+                         class="max-h-0 overflow-hidden bg-white opacity-0 transition-all duration-500 dark:bg-black">
+
+                        <div class="space-y-2 p-3">
+
+                            <a href="../index.html"
+                               data-page="home1"
+                               class="mobile-nav-link flex items-center gap-4 rounded-2xl bg-pink-50 px-4 py-4 font-bold text-brandBrown transition hover:bg-brandPink hover:text-white dark:bg-zinc-900 dark:text-white">
+
+                                <i class="fa-solid fa-house w-5 text-brandPink"></i>
+
+                                <span>Home Page 1</span>
+
+                            </a>
+
+                            <a href="home.html"
+                               data-page="home2"
+                               class="mobile-nav-link flex items-center gap-4 rounded-2xl px-4 py-4 font-bold text-brandBrown transition hover:bg-brandTeal hover:text-white dark:text-white">
+
+                                <i class="fa-solid fa-wand-magic-sparkles w-5 text-brandTeal dark:text-brandMint"></i>
+
+                                <span>Home Page 2</span>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <a href="about.html"
+                   data-page="about"
+                   class="mobile-nav-link flex items-center gap-3 rounded-2xl px-5 py-4 font-bold text-brandBrown transition hover:bg-pink-50 hover:text-brandPink dark:text-white dark:hover:bg-zinc-900">
+
+                    <i class="fa-solid fa-circle-info w-5 text-brandPink"></i>
+
+                    <span>About</span>
+
+                </a>
+
+                <a href="menu.html"
+                   data-page="menu"
+                   class="mobile-nav-link flex items-center gap-3 rounded-2xl px-5 py-4 font-bold text-brandBrown transition hover:bg-pink-50 hover:text-brandPink dark:text-white dark:hover:bg-zinc-900">
+
+                    <i class="fa-solid fa-bowl-food w-5 text-brandPink"></i>
+
+                    <span>Menu</span>
+
+                </a>
+
+                <a href="specials.html"
+                   data-page="specials"
+                   class="mobile-nav-link flex items-center gap-3 rounded-2xl px-5 py-4 font-bold text-brandBrown transition hover:bg-pink-50 hover:text-brandPink dark:text-white dark:hover:bg-zinc-900">
+
+                    <i class="fa-solid fa-star w-5 text-brandPink"></i>
+
+                    <span>Specials</span>
+
+                </a>
+
+                <a href="gallery.html"
+                   data-page="gallery"
+                   class="mobile-nav-link flex items-center gap-3 rounded-2xl px-5 py-4 font-bold text-brandBrown transition hover:bg-pink-50 hover:text-brandPink dark:text-white dark:hover:bg-zinc-900">
+
+                    <i class="fa-solid fa-images w-5 text-brandPink"></i>
+
+                    <span>Gallery</span>
+
+                </a>
+
+                <a href="team.html"
+                   data-page="team"
+                   class="mobile-nav-link flex items-center gap-3 rounded-2xl px-5 py-4 font-bold text-brandBrown transition hover:bg-pink-50 hover:text-brandPink dark:text-white dark:hover:bg-zinc-900">
+
+                    <i class="fa-solid fa-user-group w-5 text-brandPink"></i>
+
+                    <span>Team</span>
+
+                </a>
+
+                <a href="contact.html"
+                   data-page="contact"
+                   class="mobile-nav-link flex items-center gap-3 rounded-2xl px-5 py-4 font-bold text-brandBrown transition hover:bg-pink-50 hover:text-brandPink dark:text-white dark:hover:bg-zinc-900">
+
+                    <i class="fa-solid fa-envelope w-5 text-brandPink"></i>
+
+                    <span>Contact</span>
+
+                </a>
+
+                <a href="#"
+                   data-page="menu"
+                   class="mobile-nav-link mt-4 flex items-center justify-center gap-3 rounded-2xl bg-brandTeal px-5 py-4 font-bold text-white shadow-lg transition hover:bg-brandPink">
+
+                    <span>Order Now</span>
+
+                    <i class="fa-solid fa-ice-cream"></i>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- Fixed header spacing -->
+
+<div class="h-[99px]"></div>
+
+
+<!-- Page content -->
+
+<main class="min-h-screen">
+
+    <section class="flex min-h-[calc(100vh-99px)] items-center justify-center bg-white px-5 dark:bg-black">
+
+        <div class="text-center">
+
+            <p class="font-semibold uppercase tracking-[0.25em] text-brandPink">
+                Melt &amp; Swirl
+            </p>
+
+            <h2 class="mt-5 font-display text-4xl font-bold text-brandBrown dark:text-white sm:text-6xl">
+                Header completed successfully
+            </h2>
+
+            <p class="mx-auto mt-5 max-w-xl text-slate-500 dark:text-zinc-400">
+                The Home Page 1 hero section will be added here next.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- Same script path works from every page -->
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
