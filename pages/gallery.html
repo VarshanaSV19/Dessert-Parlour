@@ -682,36 +682,960 @@
 
 <div class="h-[99px]"></div>
 
+<!----------------------------------------------------------->
 
-<!-- Page content -->
 
-<main class="min-h-screen">
 
-    <section class="flex min-h-[calc(100vh-99px)] items-center justify-center bg-white px-5 dark:bg-black">
+<!-- ======================================
+     GALLERY PAGE – MAIN HERO
+======================================= -->
 
-        <div class="text-center">
+<section class="relative flex min-h-[760px] items-center overflow-hidden">
 
-            <p class="font-semibold uppercase tracking-[0.25em] text-brandPink">
-                Melt &amp; Swirl
+    <!-- Full Hero Background -->
+    <img
+        src="../assets/image/gallery-hero-bg.jpg"
+        alt="Melt and Swirl ice cream and pastry collection"
+        class="absolute inset-0 h-full w-full object-cover"
+    >
+
+    <!-- Background Overlay -->
+    <div class="absolute inset-0 bg-[#321a15]/55"></div>
+
+    <div class="absolute inset-0 bg-gradient-to-r from-[#321a15]/90 via-[#321a15]/55 to-transparent rtl:bg-gradient-to-l"></div>
+
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20"></div>
+
+    <!-- Decorative Colour Glow -->
+    <div class="pointer-events-none absolute -left-32 top-1/3 h-96 w-96 rounded-full bg-pink-500/20 blur-3xl"></div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 mx-auto w-full max-w-7xl px-6 pb-24 pt-36 lg:px-10">
+
+        <div class="max-w-2xl text-center lg:text-left rtl:lg:text-right">
+
+            <!-- Label -->
+            <span class="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.17em] text-white backdrop-blur-md">
+
+                <i class="fa-solid fa-camera text-pink-300"></i>
+                Melt & Swirl Gallery
+
+            </span>
+
+            <!-- Heading -->
+            <h1 class="mt-6 font-serif text-4xl font-bold leading-[1.15] text-white sm:text-5xl lg:text-6xl">
+
+                See the Magic
+                <span class="block text-pink-300">
+                    Behind Every Treat
+                </span>
+
+            </h1>
+
+            <!-- Description -->
+            <p class="mx-auto mt-6 max-w-xl text-base leading-7 text-white/75 lg:mx-0 rtl:lg:mx-0">
+
+                Explore our handcrafted pastries, colourful ice creams,
+                joyful celebrations and beautiful behind-the-scenes moments.
+
             </p>
 
-            <h2 class="mt-5 font-display text-4xl font-bold text-brandBrown dark:text-white sm:text-6xl">
-                Header completed successfully
-            </h2>
+            <!-- Buttons -->
+            <div class="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start rtl:lg:justify-end">
 
-            <p class="mx-auto mt-5 max-w-xl text-slate-500 dark:text-zinc-400">
-                The Home Page 1 hero section will be added here next.
+                <a href="#gallery-collection"
+                   class="group inline-flex items-center gap-3 rounded-full bg-pink-500 px-7 py-3 text-sm font-bold text-white shadow-xl shadow-pink-950/30 transition duration-300 hover:-translate-y-1 hover:bg-pink-600">
+
+                    Explore Photos
+
+                    <i class="fa-solid fa-arrow-down transition duration-300 group-hover:translate-y-1"></i>
+
+                </a>
+
+                <a href="menu.html"
+                   class="inline-flex items-center gap-3 rounded-full border border-white/40 bg-white/10 px-7 py-3 text-sm font-bold text-white backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:bg-white hover:text-[#4b2e27]">
+
+                    View Our Menu
+                    <i class="fa-solid fa-ice-cream"></i>
+
+                </a>
+
+            </div>
+
+            <!-- Gallery Information -->
+            <div class="mt-10 flex flex-wrap justify-center gap-7 lg:justify-start rtl:lg:justify-end">
+
+                <div>
+                    <p class="text-2xl font-black text-white">120+</p>
+                    <p class="mt-1 text-xs text-white/60">Sweet photos</p>
+                </div>
+
+                <div class="h-11 w-px bg-white/25"></div>
+
+                <div>
+                    <p class="text-2xl font-black text-white">6</p>
+                    <p class="mt-1 text-xs text-white/60">Collections</p>
+                </div>
+
+                <div class="h-11 w-px bg-white/25"></div>
+
+                <div>
+                    <p class="text-2xl font-black text-white">Daily</p>
+                    <p class="mt-1 text-xs text-white/60">Fresh moments</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Floating Featured Picture -->
+    <div class="absolute bottom-24 right-10 z-20 hidden w-64 overflow-hidden rounded-[28px] border-4 border-white/70 bg-white/15 p-3 shadow-2xl backdrop-blur-md xl:block rtl:left-10 rtl:right-auto">
+
+        <div class="relative overflow-hidden rounded-[20px]">
+
+            <img
+                src="../assets/image/gallery-featured.jpg"
+                alt="Featured Melt and Swirl dessert"
+                class="h-40 w-full object-cover transition duration-700 hover:scale-110"
+            >
+
+            <span class="absolute left-3 top-3 rounded-full bg-pink-500 px-3 py-2 text-[9px] font-bold uppercase tracking-wider text-white">
+                Photo of the Week
+            </span>
+
+        </div>
+
+        <div class="px-2 pb-1 pt-3">
+
+            <p class="text-xs font-bold text-white">
+                Berry Cloud Sundae
+            </p>
+
+            <p class="mt-1 text-[10px] text-white/60">
+                Captured fresh at Melt & Swirl
             </p>
 
         </div>
 
-    </section>
+    </div>
+
+    <!-- Bottom Category Bar -->
+    <div class="absolute bottom-0 left-0 right-0 z-20 border-t border-white/20 bg-black/30 backdrop-blur-xl">
+
+        <div class="mx-auto flex max-w-7xl items-center gap-7 overflow-x-auto px-6 py-5 text-xs font-bold text-white/65 lg:justify-center lg:px-10">
+
+            <a href="#icecream-gallery"
+               class="flex shrink-0 items-center gap-2 transition hover:text-pink-300">
+                <i class="fa-solid fa-ice-cream"></i>
+                Ice Cream
+            </a>
+
+            <span class="h-4 w-px shrink-0 bg-white/20"></span>
+
+            <a href="#pastry-gallery"
+               class="flex shrink-0 items-center gap-2 transition hover:text-pink-300">
+                <i class="fa-solid fa-cake-candles"></i>
+                Pastries
+            </a>
+
+            <span class="h-4 w-px shrink-0 bg-white/20"></span>
+
+            <a href="#cafe-gallery"
+               class="flex shrink-0 items-center gap-2 transition hover:text-teal-300">
+                <i class="fa-solid fa-store"></i>
+                Our Space
+            </a>
+
+            <span class="h-4 w-px shrink-0 bg-white/20"></span>
+
+            <a href="#celebration-gallery"
+               class="flex shrink-0 items-center gap-2 transition hover:text-amber-300">
+                <i class="fa-solid fa-gift"></i>
+                Celebrations
+            </a>
+
+            <span class="h-4 w-px shrink-0 bg-white/20"></span>
+
+            <a href="#behind-scenes-gallery"
+               class="flex shrink-0 items-center gap-2 transition hover:text-violet-300">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                Behind the Scenes
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-------------------------------------------------------------->
+
+
+
+
+
+
+
+<!-- ======================================
+     GALLERY – MOSAIC HERO
+======================================= -->
+
+<section class="bg-[#fff9f4] px-4 pb-8 pt-28 dark:bg-zinc-950 sm:px-6 lg:px-8">
+
+    <div class="mx-auto grid min-h-[640px] max-w-[1500px] grid-cols-2 gap-3 lg:grid-cols-12 lg:grid-rows-2">
+
+        <!-- Large Ice-Cream Image -->
+        <a href="#icecream-gallery"
+           class="group relative col-span-2 min-h-[300px] overflow-hidden rounded-[32px] lg:col-span-4 lg:row-span-2">
+
+            <img
+                src="../assets/image/gallery-mosaic-icecream.jpg"
+                alt="Colourful ice cream"
+                class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110"
+            >
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
+
+            <div class="absolute bottom-0 left-0 right-0 p-6">
+
+                <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-pink-200">
+                    Collection 01
+                </p>
+
+                <div class="mt-2 flex items-end justify-between gap-4">
+
+                    <h2 class="font-serif text-2xl font-bold text-white">
+                        Creamy Scoops
+                    </h2>
+
+                    <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-pink-500 transition duration-300 group-hover:-rotate-45 group-hover:bg-pink-500 group-hover:text-white">
+                        <i class="fa-solid fa-arrow-right rtl:rotate-180"></i>
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
+
+        <!-- Pastry Image -->
+        <a href="#pastry-gallery"
+           class="group relative min-h-[250px] overflow-hidden rounded-[32px] lg:col-span-3">
+
+            <img
+                src="../assets/image/gallery-mosaic-pastry.jpg"
+                alt="Fresh pastry"
+                class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110"
+            >
+
+            <div class="absolute inset-0 bg-gradient-to-t from-pink-950/80 via-transparent to-transparent"></div>
+
+            <div class="absolute bottom-5 left-5 right-5">
+
+                <p class="text-[10px] font-bold uppercase tracking-wider text-pink-200">
+                    Freshly Baked
+                </p>
+
+                <h2 class="mt-1 font-serif text-xl font-bold text-white">
+                    Pastry Art
+                </h2>
+
+            </div>
+
+        </a>
+
+        <!-- Main Gallery Heading -->
+        <div class="relative col-span-2 flex min-h-[300px] flex-col items-center justify-center overflow-hidden rounded-[32px] bg-[#f5d4df] p-7 text-center lg:col-span-5">
+
+            <!-- Decorations -->
+            <div class="absolute -left-8 -top-8 h-28 w-28 rounded-full border-[18px] border-white/30"></div>
+
+            <div class="absolute -bottom-8 -right-8 h-28 w-28 rounded-full bg-teal-300/40"></div>
+
+            <span class="relative inline-flex items-center gap-2 rounded-full bg-white/65 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.17em] text-pink-600 backdrop-blur">
+
+                <i class="fa-solid fa-camera"></i>
+                Melt & Swirl Gallery
+
+            </span>
+
+            <h1 class="relative mt-5 max-w-md font-serif text-3xl font-bold leading-tight text-[#4b2e27] sm:text-4xl">
+                Sweet Moments,
+                Beautifully Captured
+            </h1>
+
+            <p class="relative mt-4 max-w-md text-sm leading-6 text-stone-600">
+                Explore our desserts, celebrations and the little moments
+                that make every visit special.
+            </p>
+
+            <a href="#gallery-collection"
+               class="relative mt-6 inline-flex items-center gap-3 rounded-full bg-[#4b2e27] px-6 py-3 text-sm font-bold text-white transition duration-300 hover:-translate-y-1 hover:bg-pink-500">
+
+                View All Photos
+                <i class="fa-solid fa-arrow-down"></i>
+
+            </a>
+
+        </div>
+
+        <!-- Celebration Image -->
+        <a href="#celebration-gallery"
+           class="group relative min-h-[250px] overflow-hidden rounded-[32px] lg:col-span-5">
+
+            <img
+                src="../assets/image/gallery-mosaic-party.jpg"
+                alt="Dessert celebration"
+                class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110"
+            >
+
+            <div class="absolute inset-0 bg-gradient-to-t from-[#321a15]/80 via-transparent to-transparent"></div>
+
+            <div class="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4">
+
+                <div>
+                    <p class="text-[10px] font-bold uppercase tracking-wider text-amber-200">
+                        Shared Happiness
+                    </p>
+
+                    <h2 class="mt-1 font-serif text-xl font-bold text-white">
+                        Celebrations
+                    </h2>
+                </div>
+
+                <i class="fa-solid fa-camera-retro text-lg text-white"></i>
+
+            </div>
+
+        </a>
+
+        <!-- Cafe Image -->
+        <a href="#cafe-gallery"
+           class="group relative min-h-[250px] overflow-hidden rounded-[32px] lg:col-span-3">
+
+            <img
+                src="../assets/image/gallery-mosaic-cafe.jpg"
+                alt="Melt and Swirl cafe"
+                class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110"
+            >
+
+            <div class="absolute inset-0 bg-gradient-to-t from-teal-950/85 via-transparent to-transparent"></div>
+
+            <div class="absolute bottom-5 left-5 right-5">
+
+                <p class="text-[10px] font-bold uppercase tracking-wider text-teal-200">
+                    Step Inside
+                </p>
+
+                <h2 class="mt-1 font-serif text-xl font-bold text-white">
+                    Our Space
+                </h2>
+
+            </div>
+
+        </a>
+
+    </div>
+
+    <!-- Bottom Information -->
+    <div class="mx-auto mt-5 flex max-w-[1500px] flex-wrap items-center justify-center gap-x-8 gap-y-3 rounded-3xl border border-pink-100 bg-white px-6 py-4 text-xs font-semibold text-stone-500 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400">
+
+        <span class="flex items-center gap-2">
+            <i class="fa-solid fa-ice-cream text-pink-500"></i>
+            Dessert photography
+        </span>
+
+        <span class="hidden h-4 w-px bg-stone-200 sm:block dark:bg-zinc-700"></span>
+
+        <span class="flex items-center gap-2">
+            <i class="fa-solid fa-camera text-teal-500"></i>
+            Behind-the-scenes moments
+        </span>
+
+        <span class="hidden h-4 w-px bg-stone-200 sm:block dark:bg-zinc-700"></span>
+
+        <span class="flex items-center gap-2">
+            <i class="fa-solid fa-heart text-pink-500"></i>
+            Customer celebrations
+        </span>
+
+    </div>
+
+</section>
+<!-------------------------------------------------------------------------------->
+
+
+
+
+
+<!-- ======================================
+     COMPLETE FILTERABLE SWEET GALLERY
+======================================= -->
+
+<section id="gallery-collection"
+         class="bg-[#fffaf6] py-20 dark:bg-zinc-950">
+
+    <div class="mx-auto max-w-7xl px-6 lg:px-10">
+
+        <!-- Heading -->
+        <div class="mx-auto max-w-2xl text-center">
+
+            <span class="inline-flex items-center gap-2 rounded-full bg-pink-100 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-pink-600 dark:bg-pink-500/10 dark:text-pink-300">
+
+                <i class="fa-solid fa-images"></i>
+                Explore Our Collection
+
+            </span>
+
+            <h2 class="mt-5 font-serif text-3xl font-bold text-[#4b2e27] sm:text-4xl dark:text-white">
+                The Sweet Gallery
+            </h2>
+
+            <p class="mt-4 text-base leading-7 text-stone-600 dark:text-zinc-400">
+                Choose a category and click any photograph for a closer look.
+            </p>
+
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="mt-9 flex flex-wrap justify-center gap-3">
+
+            <button type="button"
+                    data-filter="all"
+                    class="gallery-filter active rounded-full border border-pink-500 bg-pink-500 px-5 py-3 text-xs font-bold text-white transition duration-300">
+                All Photos
+            </button>
+
+            <button type="button"
+                    data-filter="icecream"
+                    class="gallery-filter rounded-full border border-stone-200 bg-white px-5 py-3 text-xs font-bold text-stone-600 transition duration-300 hover:border-pink-500 hover:bg-pink-500 hover:text-white dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300">
+                Ice Cream
+            </button>
+
+            <button type="button"
+                    data-filter="pastry"
+                    class="gallery-filter rounded-full border border-stone-200 bg-white px-5 py-3 text-xs font-bold text-stone-600 transition duration-300 hover:border-pink-500 hover:bg-pink-500 hover:text-white dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300">
+                Pastries
+            </button>
+
+            <button type="button"
+                    data-filter="cafe"
+                    class="gallery-filter rounded-full border border-stone-200 bg-white px-5 py-3 text-xs font-bold text-stone-600 transition duration-300 hover:border-pink-500 hover:bg-pink-500 hover:text-white dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300">
+                Our Space
+            </button>
+
+            <button type="button"
+                    data-filter="celebration"
+                    class="gallery-filter rounded-full border border-stone-200 bg-white px-5 py-3 text-xs font-bold text-stone-600 transition duration-300 hover:border-pink-500 hover:bg-pink-500 hover:text-white dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300">
+                Celebrations
+            </button>
+
+        </div>
+
+        <!-- Filter Result Information -->
+        <div class="mt-7 flex items-center justify-center gap-2 text-sm text-stone-500 dark:text-zinc-400">
+
+            <i class="fa-solid fa-camera text-pink-500"></i>
+
+            <span id="galleryResultText">
+                Showing all photographs
+            </span>
+
+        </div>
+
+        <!-- Gallery Images -->
+        <div id="galleryImages"
+             class="mt-10 grid scroll-mt-28 grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+
+            <!-- Ice Cream 01 -->
+            <button type="button"
+                    data-category="icecream"
+                    data-title="Berry Cloud Sundae"
+                    class="gallery-item group relative overflow-hidden rounded-[28px] transition duration-300">
+
+                <img
+                    src="../assets/image/gallery-01.jpg"
+                    alt="Berry Cloud Sundae"
+                    class="h-[430px] w-full object-cover transition duration-700 group-hover:scale-110"
+                >
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/5 to-transparent"></div>
+
+                <div class="absolute bottom-0 left-0 right-0 flex items-end justify-between p-5 text-left">
+
+                    <div>
+                        <p class="text-[10px] font-bold uppercase tracking-wider text-pink-200">
+                            Ice Cream
+                        </p>
+
+                        <h3 class="mt-1 text-base font-bold text-white">
+                            Berry Cloud Sundae
+                        </h3>
+                    </div>
+
+                    <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur transition group-hover:bg-pink-500">
+                        <i class="fa-solid fa-expand"></i>
+                    </span>
+
+                </div>
+
+            </button>
+
+            <!-- Pastry 01 -->
+            <button type="button"
+                    data-category="pastry"
+                    data-title="Chocolate Truffle Layers"
+                    class="gallery-item group relative overflow-hidden rounded-[28px] transition duration-300">
+
+                <img
+                    src="../assets/image/gallery-02.jpg"
+                    alt="Chocolate Truffle Pastry"
+                    class="h-[330px] w-full object-cover transition duration-700 group-hover:scale-110"
+                >
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/5 to-transparent"></div>
+
+                <div class="absolute bottom-0 left-0 right-0 flex items-end justify-between p-5 text-left">
+
+                    <div>
+                        <p class="text-[10px] font-bold uppercase tracking-wider text-pink-200">
+                            Pastry
+                        </p>
+
+                        <h3 class="mt-1 text-base font-bold text-white">
+                            Chocolate Truffle Layers
+                        </h3>
+                    </div>
+
+                    <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur transition group-hover:bg-pink-500">
+                        <i class="fa-solid fa-expand"></i>
+                    </span>
+
+                </div>
+
+            </button>
+
+            <!-- Cafe 01 -->
+            <button type="button"
+                    data-category="cafe"
+                    data-title="Our Colourful Corner"
+                    class="gallery-item group relative overflow-hidden rounded-[28px] transition duration-300">
+
+                <img
+                    src="../assets/image/gallery-03.jpg"
+                    alt="Melt and Swirl cafe interior"
+                    class="h-[390px] w-full object-cover transition duration-700 group-hover:scale-110"
+                >
+
+                <div class="absolute inset-0 bg-gradient-to-t from-teal-950/90 via-transparent to-transparent"></div>
+
+                <div class="absolute bottom-0 left-0 right-0 flex items-end justify-between p-5 text-left">
+
+                    <div>
+                        <p class="text-[10px] font-bold uppercase tracking-wider text-teal-200">
+                            Our Space
+                        </p>
+
+                        <h3 class="mt-1 text-base font-bold text-white">
+                            Our Colourful Corner
+                        </h3>
+                    </div>
+
+                    <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur transition group-hover:bg-teal-500">
+                        <i class="fa-solid fa-expand"></i>
+                    </span>
+
+                </div>
+
+            </button>
+
+            <!-- Celebration 01 -->
+            <button type="button"
+                    data-category="celebration"
+                    data-title="Birthday Dessert Table"
+                    class="gallery-item group relative overflow-hidden rounded-[28px] transition duration-300">
+
+                <img
+                    src="../assets/image/gallery-04.jpg"
+                    alt="Birthday dessert celebration"
+                    class="h-[350px] w-full object-cover transition duration-700 group-hover:scale-110"
+                >
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent"></div>
+
+                <div class="absolute bottom-0 left-0 right-0 flex items-end justify-between p-5 text-left">
+
+                    <div>
+                        <p class="text-[10px] font-bold uppercase tracking-wider text-amber-200">
+                            Celebration
+                        </p>
+
+                        <h3 class="mt-1 text-base font-bold text-white">
+                            Birthday Dessert Table
+                        </h3>
+                    </div>
+
+                    <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur transition group-hover:bg-amber-500">
+                        <i class="fa-solid fa-expand"></i>
+                    </span>
+
+                </div>
+
+            </button>
+
+            <!-- Pastry 02 -->
+            <button type="button"
+                    data-category="pastry"
+                    data-title="Pistachio Rose Pastry"
+                    class="gallery-item group relative overflow-hidden rounded-[28px] transition duration-300">
+
+                <img
+                    src="../assets/image/gallery-05.jpg"
+                    alt="Pistachio Rose Pastry"
+                    class="h-[420px] w-full object-cover transition duration-700 group-hover:scale-110"
+                >
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent"></div>
+
+                <div class="absolute bottom-0 left-0 right-0 flex items-end justify-between p-5 text-left">
+
+                    <div>
+                        <p class="text-[10px] font-bold uppercase tracking-wider text-pink-200">
+                            Pastry
+                        </p>
+
+                        <h3 class="mt-1 text-base font-bold text-white">
+                            Pistachio Rose Pastry
+                        </h3>
+                    </div>
+
+                    <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur transition group-hover:bg-pink-500">
+                        <i class="fa-solid fa-expand"></i>
+                    </span>
+
+                </div>
+
+            </button>
+
+            <!-- Ice Cream 02 -->
+            <button type="button"
+                    data-category="icecream"
+                    data-title="Chocolate Swirl Scoop"
+                    class="gallery-item group relative overflow-hidden rounded-[28px] transition duration-300">
+
+                <img
+                    src="../assets/image/gallery-06.jpg"
+                    alt="Chocolate Swirl Ice Cream"
+                    class="h-[320px] w-full object-cover transition duration-700 group-hover:scale-110"
+                >
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent"></div>
+
+                <div class="absolute bottom-0 left-0 right-0 flex items-end justify-between p-5 text-left">
+
+                    <div>
+                        <p class="text-[10px] font-bold uppercase tracking-wider text-pink-200">
+                            Ice Cream
+                        </p>
+
+                        <h3 class="mt-1 text-base font-bold text-white">
+                            Chocolate Swirl Scoop
+                        </h3>
+                    </div>
+
+                    <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur transition group-hover:bg-pink-500">
+                        <i class="fa-solid fa-expand"></i>
+                    </span>
+
+                </div>
+
+            </button>
+
+            <!-- Celebration 02 -->
+            <button type="button"
+                    data-category="celebration"
+                    data-title="A Table Full of Happiness"
+                    class="gallery-item group relative overflow-hidden rounded-[28px] transition duration-300">
+
+                <img
+                    src="../assets/image/gallery-07.jpg"
+                    alt="Friends enjoying desserts"
+                    class="h-[380px] w-full object-cover transition duration-700 group-hover:scale-110"
+                >
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent"></div>
+
+                <div class="absolute bottom-0 left-0 right-0 flex items-end justify-between p-5 text-left">
+
+                    <div>
+                        <p class="text-[10px] font-bold uppercase tracking-wider text-amber-200">
+                            Celebration
+                        </p>
+
+                        <h3 class="mt-1 text-base font-bold text-white">
+                            A Table Full of Happiness
+                        </h3>
+                    </div>
+
+                    <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur transition group-hover:bg-amber-500">
+                        <i class="fa-solid fa-expand"></i>
+                    </span>
+
+                </div>
+
+            </button>
+
+            <!-- Cafe 02 -->
+            <button type="button"
+                    data-category="cafe"
+                    data-title="The Dessert Counter"
+                    class="gallery-item group relative overflow-hidden rounded-[28px] transition duration-300">
+
+                <img
+                    src="../assets/image/gallery-08.jpg"
+                    alt="Melt and Swirl dessert counter"
+                    class="h-[340px] w-full object-cover transition duration-700 group-hover:scale-110"
+                >
+
+                <div class="absolute inset-0 bg-gradient-to-t from-teal-950/90 via-transparent to-transparent"></div>
+
+                <div class="absolute bottom-0 left-0 right-0 flex items-end justify-between p-5 text-left">
+
+                    <div>
+                        <p class="text-[10px] font-bold uppercase tracking-wider text-teal-200">
+                            Our Space
+                        </p>
+
+                        <h3 class="mt-1 text-base font-bold text-white">
+                            The Dessert Counter
+                        </h3>
+                    </div>
+
+                    <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur transition group-hover:bg-teal-500">
+                        <i class="fa-solid fa-expand"></i>
+                    </span>
+
+                </div>
+
+            </button>
+
+            <!-- Ice Cream 03 -->
+            <button type="button"
+                    data-category="icecream"
+                    data-title="Tropical Mango Dream"
+                    class="gallery-item group relative overflow-hidden rounded-[28px] transition duration-300">
+
+                <img
+                    src="../assets/image/gallery-09.jpg"
+                    alt="Tropical Mango Ice Cream"
+                    class="h-[440px] w-full object-cover transition duration-700 group-hover:scale-110"
+                >
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent"></div>
+
+                <div class="absolute bottom-0 left-0 right-0 flex items-end justify-between p-5 text-left">
+
+                    <div>
+                        <p class="text-[10px] font-bold uppercase tracking-wider text-pink-200">
+                            Ice Cream
+                        </p>
+
+                        <h3 class="mt-1 text-base font-bold text-white">
+                            Tropical Mango Dream
+                        </h3>
+                    </div>
+
+                    <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur transition group-hover:bg-pink-500">
+                        <i class="fa-solid fa-expand"></i>
+                    </span>
+
+                </div>
+
+            </button>
+
+            <!-- Pastry 03 -->
+            <button type="button"
+                    data-category="pastry"
+                    data-title="Red Velvet Delight"
+                    class="gallery-item group relative overflow-hidden rounded-[28px] transition duration-300">
+
+                <img
+                    src="../assets/image/gallery-10.jpg"
+                    alt="Red Velvet Pastry"
+                    class="h-[360px] w-full object-cover transition duration-700 group-hover:scale-110"
+                >
+
+                <div class="absolute inset-0 bg-gradient-to-t from-pink-950/90 via-transparent to-transparent"></div>
+
+                <div class="absolute bottom-0 left-0 right-0 flex items-end justify-between p-5 text-left">
+
+                    <div>
+                        <p class="text-[10px] font-bold uppercase tracking-wider text-pink-200">
+                            Pastry
+                        </p>
+
+                        <h3 class="mt-1 text-base font-bold text-white">
+                            Red Velvet Delight
+                        </h3>
+                    </div>
+
+                    <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur transition group-hover:bg-pink-500">
+                        <i class="fa-solid fa-expand"></i>
+                    </span>
+
+                </div>
+
+            </button>
+
+            <!-- Cafe 03 -->
+            <button type="button"
+                    data-category="cafe"
+                    data-title="A Cozy Sweet Corner"
+                    class="gallery-item group relative overflow-hidden rounded-[28px] transition duration-300">
+
+                <img
+                    src="../assets/image/gallery-11.jpg"
+                    alt="Cozy cafe seating"
+                    class="h-[410px] w-full object-cover transition duration-700 group-hover:scale-110"
+                >
+
+                <div class="absolute inset-0 bg-gradient-to-t from-teal-950/90 via-transparent to-transparent"></div>
+
+                <div class="absolute bottom-0 left-0 right-0 flex items-end justify-between p-5 text-left">
+
+                    <div>
+                        <p class="text-[10px] font-bold uppercase tracking-wider text-teal-200">
+                            Our Space
+                        </p>
+
+                        <h3 class="mt-1 text-base font-bold text-white">
+                            A Cozy Sweet Corner
+                        </h3>
+                    </div>
+
+                    <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur transition group-hover:bg-teal-500">
+                        <i class="fa-solid fa-expand"></i>
+                    </span>
+
+                </div>
+
+            </button>
+
+            <!-- Celebration 03 -->
+            <button type="button"
+                    data-category="celebration"
+                    data-title="Sweet Anniversary Moments"
+                    class="gallery-item group relative overflow-hidden rounded-[28px] transition duration-300">
+
+                <img
+                    src="../assets/image/gallery-12.jpg"
+                    alt="Anniversary dessert celebration"
+                    class="h-[330px] w-full object-cover transition duration-700 group-hover:scale-110"
+                >
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent"></div>
+
+                <div class="absolute bottom-0 left-0 right-0 flex items-end justify-between p-5 text-left">
+
+                    <div>
+                        <p class="text-[10px] font-bold uppercase tracking-wider text-amber-200">
+                            Celebration
+                        </p>
+
+                        <h3 class="mt-1 text-base font-bold text-white">
+                            Sweet Anniversary Moments
+                        </h3>
+                    </div>
+
+                    <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur transition group-hover:bg-amber-500">
+                        <i class="fa-solid fa-expand"></i>
+                    </span>
+
+                </div>
+
+            </button>
+
+        </div>
+
+        <!-- Empty Message -->
+        <div id="galleryEmptyMessage"
+             class="mt-10 hidden rounded-3xl bg-white p-8 text-center dark:bg-zinc-900">
+
+            <i class="fa-regular fa-images text-3xl text-pink-500"></i>
+
+            <p class="mt-3 text-sm font-bold text-[#4b2e27] dark:text-white">
+                No photographs found.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ======================================
+     GALLERY IMAGE PREVIEW
+======================================= -->
+
+<div id="galleryLightbox"
+     class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/90 p-5 backdrop-blur-sm">
+
+    <button id="closeGalleryLightbox"
+            type="button"
+            aria-label="Close image preview"
+            class="absolute right-5 top-5 flex h-12 w-12 items-center justify-center rounded-full bg-white/15 text-white transition duration-300 hover:rotate-90 hover:bg-pink-500">
+
+        <i class="fa-solid fa-xmark text-lg"></i>
+
+    </button>
+
+    <div class="w-full max-w-5xl">
+
+        <img id="galleryLightboxImage"
+             src=""
+             alt=""
+             class="max-h-[75vh] w-full rounded-[28px] object-contain">
+
+        <div class="mt-5 text-center">
+
+            <p class="text-xs font-bold uppercase tracking-[0.17em] text-pink-300">
+                Melt & Swirl Gallery
+            </p>
+
+            <h3 id="galleryLightboxTitle"
+                class="mt-2 font-serif text-2xl font-bold text-white">
+            </h3>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!------------------------------------------------->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </main>
 
 
 <!-- Same script path works from every page -->
-<script src="assets/js/main.js"></script>
+<script src="../assets/js/main.js"></script>
 
 </body>
 

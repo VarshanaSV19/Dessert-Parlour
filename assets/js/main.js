@@ -512,3 +512,200 @@ if (firstValuePanel) {
     firstValuePanel.style.maxHeight =
         firstValuePanel.scrollHeight + "px";
 }
+
+
+// Hide page loader
+document.addEventListener("DOMContentLoaded", function () {
+    const loader = document.getElementById("pageLoader");
+
+    if (loader) {
+        setTimeout(function () {
+            loader.classList.add("opacity-0", "pointer-events-none");
+
+            setTimeout(function () {
+                loader.style.display = "none";
+            }, 500);
+        }, 700);
+    }
+});
+
+
+
+// =====================================
+// LOADING SCREEN
+// =====================================
+
+function hidePageLoader() {
+    const loader = document.querySelector(
+        "#pageLoader, #preloader, #loader, .page-loader, .preloader"
+    );
+
+    if (!loader) return;
+
+    loader.style.opacity = "0";
+    loader.style.visibility = "hidden";
+    loader.style.pointerEvents = "none";
+
+    setTimeout(() => {
+        loader.style.display = "none";
+    }, 500);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(hidePageLoader, 800);
+});
+
+// Backup in case an image takes time to load
+setTimeout(hidePageLoader, 2500);
+
+
+
+// =====================================
+// BUILD YOUR DESSERT
+// =====================================
+
+const dessertOptions = document.querySelectorAll(".dessert-option");
+
+const dessertSelection = {
+    base: {
+        name: "Waffle Cup",
+        price: 79
+    },
+    flavour: {
+        name: "Strawberry",
+        price: 65
+    },
+    topping: {
+        name: "Berry Mix",
+        price: 35
+    }
+};
+
+dessertOptions.forEach((option) => {
+    option.addEventListener("click", () => {
+        const group = option.dataset.optionGroup;
+        const name = option.dataset.name;
+        const price = Number(option.dataset.price);
+
+        document
+            .querySelectorAll(`[data-option-group="${group}"]`)
+            .forEach((button) => {
+                button.classList.remove("selected");
+            });
+
+        option.classList.add("selected");
+
+        dessertSelection[group] = {
+            name: name,
+            price: price
+        };
+
+        document.getElementById("selectedBase").textContent =
+            dessertSelection.base.name;
+
+        document.getElementById("selectedFlavour").textContent =
+            dessertSelection.flavour.name;
+
+        document.getElementById("selectedTopping").textContent =
+            dessertSelection.topping.name;
+
+        const total =
+            dessertSelection.base.price +
+            dessertSelection.flavour.price +
+            dessertSelection.topping.price;
+
+        document.getElementById("dessertTotal").textContent = `₹${total}`;
+    });
+});
+
+
+// =====================================
+// SURPRISE SWEET DEAL GENERATOR
+// =====================================
+
+const sweetDeals = [
+    {
+        name: "Berry Celebration",
+        pastry: "Strawberry Cream",
+        iceCream: "Berry Vanilla",
+        oldPrice: 269,
+        newPrice: 199,
+        image: "../assets/image/surprise-berry-combo.jpg"
+    },
+    {
+        name: "Chocolate Overload",
+        pastry: "Chocolate Truffle",
+        iceCream: "Dark Chocolate",
+        oldPrice: 289,
+        newPrice: 219,
+        image: "../assets/image/surprise-chocolate-combo.jpg"
+    },
+    {
+        name: "Tropical Sunshine",
+        pastry: "Mango Cream",
+        iceCream: "Coconut Mango",
+        oldPrice: 259,
+        newPrice: 189,
+        image: "../assets/image/surprise-mango-combo.jpg"
+    },
+    {
+        name: "Royal Pistachio",
+        pastry: "Pistachio Rose",
+        iceCream: "Roasted Pistachio",
+        oldPrice: 319,
+        newPrice: 239,
+        image: "../assets/image/surprise-pistachio-combo.jpg"
+    }
+];
+
+const generateSweetDeal = document.getElementById("generateSweetDeal");
+const orderSurpriseDeal = document.getElementById("orderSurpriseDeal");
+
+let selectedSweetDeal = sweetDeals[0];
+
+function displaySweetDeal(deal) {
+    const dealCard = document.getElementById("surpriseDealCard");
+
+    dealCard.classList.add("scale-95", "opacity-50");
+
+    setTimeout(() => {
+        document.getElementById("surpriseDealName").textContent = deal.name;
+        document.getElementById("surprisePastry").textContent = deal.pastry;
+        document.getElementById("surpriseIceCream").textContent = deal.iceCream;
+        document.getElementById("surpriseOldPrice").textContent = `₹${deal.oldPrice}`;
+        document.getElementById("surpriseNewPrice").textContent = `₹${deal.newPrice}`;
+        document.getElementById("surpriseDealImage").src = deal.image;
+
+        dealCard.classList.remove("scale-95", "opacity-50");
+    }, 300);
+}
+
+if (generateSweetDeal) {
+    generateSweetDeal.addEventListener("click", () => {
+        let randomDeal;
+
+        do {
+            randomDeal =
+                sweetDeals[Math.floor(Math.random() * sweetDeals.length)];
+        } while (
+            randomDeal.name === selectedSweetDeal.name &&
+            sweetDeals.length > 1
+        );
+
+        selectedSweetDeal = randomDeal;
+        displaySweetDeal(selectedSweetDeal);
+    });
+}
+
+if (orderSurpriseDeal) {
+    orderSurpriseDeal.addEventListener("click", () => {
+        const orderDetails = new URLSearchParams({
+            item: selectedSweetDeal.name,
+            price: `₹${selectedSweetDeal.newPrice}`,
+            pastry: selectedSweetDeal.pastry,
+            iceCream: selectedSweetDeal.iceCream
+        });
+
+        window.location.href = `contact.html?${orderDetails.toString()}`;
+    });
+}
