@@ -50,7 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
         specials: "/pages/specials.html",
         gallery: "/pages/gallery.html",
         team: "/pages/team.html",
-        contact: "/pages/contact.html"
+        contact: "/pages/contact.html",
+        order: "/pages/order.html"
     };
 
     const routeLinks =
@@ -407,7 +408,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "/pages/specials.html": "specials",
         "/pages/gallery.html": "gallery",
         "/pages/team.html": "team",
-        "/pages/contact.html": "contact"
+        "/pages/contact.html": "contact",
+        "/pages/order.html": "order"
     };
 
     const activePage =
@@ -614,7 +616,7 @@ dessertOptions.forEach((option) => {
             dessertSelection.flavour.price +
             dessertSelection.topping.price;
 
-        document.getElementById("dessertTotal").textContent = `₹${total}`;
+        document.getElementById("dessertTotal").textContent = `\u20B9${total}`;
     });
 });
 
@@ -663,6 +665,15 @@ const orderSurpriseDeal = document.getElementById("orderSurpriseDeal");
 
 let selectedSweetDeal = sweetDeals[0];
 
+window.orderSpecial = function (itemName, itemPrice) {
+    const orderDetails = new URLSearchParams({
+        item: itemName,
+        price: itemPrice
+    });
+
+    window.location.href = `order.html?${orderDetails.toString()}`;
+};
+
 function displaySweetDeal(deal) {
     const dealCard = document.getElementById("surpriseDealCard");
 
@@ -672,8 +683,8 @@ function displaySweetDeal(deal) {
         document.getElementById("surpriseDealName").textContent = deal.name;
         document.getElementById("surprisePastry").textContent = deal.pastry;
         document.getElementById("surpriseIceCream").textContent = deal.iceCream;
-        document.getElementById("surpriseOldPrice").textContent = `₹${deal.oldPrice}`;
-        document.getElementById("surpriseNewPrice").textContent = `₹${deal.newPrice}`;
+        document.getElementById("surpriseOldPrice").textContent = `\u20B9${deal.oldPrice}`;
+        document.getElementById("surpriseNewPrice").textContent = `\u20B9${deal.newPrice}`;
         document.getElementById("surpriseDealImage").src = deal.image;
 
         dealCard.classList.remove("scale-95", "opacity-50");
@@ -701,11 +712,11 @@ if (orderSurpriseDeal) {
     orderSurpriseDeal.addEventListener("click", () => {
         const orderDetails = new URLSearchParams({
             item: selectedSweetDeal.name,
-            price: `₹${selectedSweetDeal.newPrice}`,
+            price: `\u20B9${selectedSweetDeal.newPrice}`,
             pastry: selectedSweetDeal.pastry,
             iceCream: selectedSweetDeal.iceCream
         });
 
-        window.location.href = `contact.html?${orderDetails.toString()}`;
+        window.location.href = `order.html?${orderDetails.toString()}`;
     });
 }

@@ -526,7 +526,7 @@
             <!-- CTA -->
 
             <a href="#"
-               data-page="menu"
+               data-page="order"
                class="hidden items-center gap-2 rounded-full bg-brandTeal px-6 py-3 text-sm font-bold text-white shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-brandPink lg:flex">
 
                 <span>Order Now</span>
@@ -678,7 +678,7 @@
                 </a>
 
                 <a href="#"
-                   data-page="menu"
+                   data-page="order"
                    class="mobile-nav-link mt-4 flex items-center justify-center gap-3 rounded-2xl bg-brandTeal px-5 py-4 font-bold text-white shadow-lg transition hover:bg-brandPink">
 
                     <span>Order Now</span>
@@ -703,189 +703,560 @@
 <main class="min-h-screen">
 
     <!----------------------------------------------------------------------------->
-    <!-- ======================================
-     MENU PAGE – HERO SECTION
-======================================= -->
+    <!-- ==================================================
+                MENU BOARD HERO SECTION
+================================================== -->
 
-<section class="relative min-h-[560px] overflow-hidden bg-[#fff9f5] pt-6 dark:bg-zinc-950">
+<!-- ==================================================
+               DESSERT MENU COVER HERO
+================================================== -->
 
-    <!-- Background Decorations -->
-    <div class="pointer-events-none absolute -left-24 top-32 h-72 w-72 rounded-full bg-pink-200/50 blur-3xl dark:bg-pink-500/10"></div>
+<section class="relative overflow-hidden bg-[#F8578B] text-white">
 
-    <div class="pointer-events-none absolute -right-24 bottom-10 h-80 w-80 rounded-full bg-teal-200/50 blur-3xl dark:bg-teal-500/10"></div>
+    <!-- Decorative background text -->
+    <div class="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden">
+
+        <span class="whitespace-nowrap font-display text-[180px] font-extrabold uppercase leading-none tracking-tighter text-white/[0.06] sm:text-[260px] lg:text-[360px]">
+            MENU
+        </span>
+
+    </div>
+
+    <!-- Decorative circles -->
+    <div class="pointer-events-none absolute -left-20 -top-20 h-64 w-64 rounded-full border-[45px] border-white/10"></div>
+
+    <div class="pointer-events-none absolute -bottom-32 -right-24 h-80 w-80 rounded-full bg-brandTeal/25"></div>
+
+    <div class="pointer-events-none absolute right-[12%] top-[10%] hidden rotate-12 text-5xl text-white/20 lg:block">
+
+        <i class="fa-solid fa-sparkles"></i>
+
+    </div>
 
 
-    <div class="relative mx-auto grid max-w-7xl items-center gap-14 px-6 py-8 lg:min-h-[500px] lg:grid-cols-2 lg:px-10">
+    <div class="relative mx-auto min-h-[680px] max-w-[1500px] px-5 pb-10 pt-6 sm:px-8 sm:pt-8 lg:px-10 lg:pt-6">
 
-        <!-- Left Content -->
-        <div class="text-center lg:text-left rtl:lg:text-right">
 
-            <!-- Small Label -->
-            <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-pink-200 bg-white px-4 py-2 shadow-sm dark:border-zinc-700 dark:bg-zinc-900">
+        <!-- Top navigation row -->
+        <div class="flex items-center justify-between">
 
-                <span class="relative flex h-2.5 w-2.5">
-                    <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-pink-400 opacity-70"></span>
-                    <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-pink-500"></span>
+            <nav aria-label="Breadcrumb"
+                 class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-white/70">
+
+                <a href="../index.html"
+                   class="transition hover:text-white">
+                    Home
+                </a>
+
+                <span>/</span>
+
+                <span class="text-white">
+                    Menu
                 </span>
 
-                <span class="text-xs font-bold uppercase tracking-[0.16em] text-pink-500">
-                    Freshly Made Today
-                </span>
+            </nav>
 
-            </div>
+            <span class="hidden items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-white/70 sm:flex">
 
-            <!-- Heading -->
-            <h1 class="font-serif text-4xl font-bold leading-[1.15] text-[#4b2e27] sm:text-5xl dark:text-white">
+                <span class="h-2 w-2 animate-pulse rounded-full bg-brandMint"></span>
 
-                A Menu Made for
-                <span class="relative inline-block text-pink-500">
+                Freshly made today
 
-                    Sweet Cravings
+            </span>
 
-                    <svg class="absolute -bottom-2 left-0 h-3 w-full text-teal-400"
-                         viewBox="0 0 200 12"
-                         fill="none"
-                         xmlns="http://www.w3.org/2000/svg">
+        </div>
 
-                        <path d="M3 8C42 2 76 11 111 6C142 2 169 4 197 2"
-                              stroke="currentColor"
-                              stroke-width="5"
-                              stroke-linecap="round"/>
 
-                    </svg>
+        <!-- Centered heading -->
+        <div class="relative z-10 mx-auto mt-10 max-w-4xl text-center">
 
+            <p class="font-logo text-2xl text-brandMint sm:text-3xl">
+                Melt &amp; Swirl presents
+            </p>
+
+            <h1 class="mt-3 font-display text-6xl font-extrabold uppercase leading-[0.85] tracking-[-0.05em] text-white sm:text-8xl lg:text-[118px]">
+
+                The Sweet
+
+                <span class="block text-brandBrown">
+                    Selection
                 </span>
 
             </h1>
 
-            <!-- Description -->
-            <p class="mx-auto mt-7 max-w-lg text-base leading-7 text-stone-600 lg:mx-0 dark:text-zinc-300 rtl:lg:mx-0">
+            <p class="mx-auto mt-7 max-w-xl text-sm leading-7 text-white/80 sm:text-base">
 
-                From creamy scoops to warm desserts, every treat is crafted
-                with fresh ingredients and a little Melt & Swirl magic.
+                Pick a classic, discover a new favourite or create a dessert
+                that is completely yours.
 
             </p>
 
+        </div>
 
-            <!-- Features -->
-            <div class="mt-9 flex flex-wrap justify-center gap-x-6 gap-y-3 lg:justify-start rtl:lg:justify-end">
 
-                <div class="flex items-center gap-2 text-sm font-medium text-stone-600 dark:text-zinc-300">
-                    <i class="fa-solid fa-leaf text-teal-500"></i>
-                    Fresh Ingredients
+        <!-- Dessert showcase -->
+        <div class="relative z-20 mt-12 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
+
+
+            <!-- Ice cream -->
+            <a href="#ice-creams"
+               class="group relative mt-8 overflow-hidden rounded-[28px] bg-[#FFF8F3] p-3 text-brandBrown shadow-[0_20px_45px_rgba(59,29,22,0.18)] transition duration-500 hover:-translate-y-4 hover:-rotate-2 sm:p-4 lg:mt-12">
+
+                <div class="relative h-40 overflow-hidden rounded-[22px] sm:h-52">
+
+                    <img src="../assets/image/m24.jpg"
+                         alt="Ice cream collection"
+                         class="h-full w-full object-cover transition duration-700 group-hover:scale-110">
+
+
+
                 </div>
 
-                <div class="flex items-center gap-2 text-sm font-medium text-stone-600 dark:text-zinc-300">
-                    <i class="fa-solid fa-wand-magic-sparkles text-pink-500"></i>
-                    Handmade Treats
+                <div class="flex items-center justify-between px-2 pb-2 pt-4">
+
+                    <div>
+
+                        <p class="text-[9px] font-bold uppercase tracking-[0.18em] text-brandPink">
+                            Cool &amp; creamy
+                        </p>
+
+                        <h2 class="mt-1 font-display text-xl font-bold sm:text-2xl">
+                            Ice Cream
+                        </h2>
+
+                    </div>
+
+
                 </div>
 
-                <div class="flex items-center gap-2 text-sm font-medium text-stone-600 dark:text-zinc-300">
-                    <i class="fa-solid fa-heart text-rose-500"></i>
-                    Made with Love
+            </a>
+
+
+            <!-- Sundaes -->
+            <a href="#sundaes"
+               class="group relative overflow-hidden rounded-[28px] bg-brandMint p-3 text-brandBrown shadow-[0_20px_45px_rgba(59,29,22,0.18)] transition duration-500 hover:-translate-y-4 hover:rotate-2 sm:p-4">
+
+                <div class="relative h-40 overflow-hidden rounded-[22px] sm:h-52">
+
+                    <img src="../assets/image/m31.jpg"
+                         alt="Loaded ice cream sundae"
+                         class="h-full w-full object-cover transition duration-700 group-hover:scale-110">
+
+                    <span class="absolute left-3 top-3 rounded-full bg-brandTeal px-3 py-1.5 text-[9px] font-extrabold uppercase tracking-wider text-white">
+                        Most loved
+                    </span>
+
                 </div>
+
+                <div class="flex items-center justify-between px-2 pb-2 pt-4">
+
+                    <div>
+
+                        <p class="text-[9px] font-bold uppercase tracking-[0.18em] text-brandTeal">
+                            Loaded with joy
+                        </p>
+
+                        <h2 class="mt-1 font-display text-xl font-bold sm:text-2xl">
+                            Sundaes
+                        </h2>
+
+                    </div>
+
+
+
+                </div>
+
+            </a>
+
+
+            <!-- Shakes -->
+            <a href="#shakes"
+               class="group relative mt-4 overflow-hidden rounded-[28px] bg-brandBrown p-3 text-white shadow-[0_20px_45px_rgba(59,29,22,0.25)] transition duration-500 hover:-translate-y-4 hover:-rotate-2 sm:p-4 lg:mt-10">
+
+                <div class="relative h-40 overflow-hidden rounded-[22px] sm:h-52">
+
+                    <img src="../assets/image/m35.jpg"
+                         alt="Creamy dessert shake"
+                         class="h-full w-full object-cover transition duration-700 group-hover:scale-110">
+
+                    <span class="absolute left-3 top-3 rounded-full bg-white px-3 py-1.5 text-[9px] font-extrabold uppercase tracking-wider text-brandBrown">
+                        Extra creamy
+                    </span>
+
+                </div>
+
+                <div class="flex items-center justify-between px-2 pb-2 pt-4">
+
+                    <div>
+
+                        <p class="text-[9px] font-bold uppercase tracking-[0.18em] text-brandMint">
+                            Sip happiness
+                        </p>
+
+                        <h2 class="mt-1 font-display text-xl font-bold sm:text-2xl">
+                            Shakes
+                        </h2>
+
+                    </div>
+
+
+                </div>
+
+            </a>
+
+
+            <!-- Build your own -->
+            <a href="#build-your-dessert"
+               class="group relative mt-8 overflow-hidden rounded-[28px] bg-[#FFE5AE] p-3 text-brandBrown shadow-[0_20px_45px_rgba(59,29,22,0.18)] transition duration-500 hover:-translate-y-4 hover:rotate-2 sm:p-4 lg:mt-2">
+
+                <div class="relative flex h-40 items-center justify-center overflow-hidden rounded-[22px] bg-brandCream sm:h-52">
+
+                    <div class="absolute h-32 w-32 rounded-full bg-brandPink/10 transition duration-500 group-hover:scale-125"></div>
+
+                    <div class="relative text-center">
+
+                        <span class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-brandPink text-3xl text-white shadow-xl transition duration-500 group-hover:rotate-12 group-hover:scale-110">
+
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                        </span>
+
+                        <p class="mt-4 text-[10px] font-extrabold uppercase tracking-[0.18em] text-brandPink">
+                            You choose everything
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="flex items-center justify-between px-2 pb-2 pt-4">
+
+                    <div>
+
+                        <p class="text-[9px] font-bold uppercase tracking-[0.18em] text-amber-700">
+                            Make it yours
+                        </p>
+
+                        <h2 class="mt-1 font-display text-xl font-bold sm:text-2xl">
+                            Build a Treat
+                        </h2>
+
+                    </div>
+
+
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- Bottom menu link -->
+        <div class="relative z-20 mt-10 flex justify-center">
+
+
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==================================================
+                MENU  SECTION
+================================================== -->
+
+<section class="relative overflow-hidden bg-brandBrown text-white dark:bg-black">
+
+    <!-- Background pattern -->
+    <div class="pointer-events-none absolute inset-0 opacity-[0.07]"
+         style="background-image:
+         linear-gradient(#ffffff 1px, transparent 1px),
+         linear-gradient(90deg, #ffffff 1px, transparent 1px);
+         background-size: 42px 42px;">
+    </div>
+
+    <!-- Decorative glow -->
+    <div class="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-brandPink/30 blur-3xl"></div>
+
+    <div class="pointer-events-none absolute -bottom-40 right-0 h-[450px] w-[450px] rounded-full bg-brandTeal/50 blur-3xl"></div>
+
+
+    <div class="relative mx-auto grid min-h-[620px] max-w-[1500px] lg:grid-cols-[1fr_0.9fr]">
+
+
+        <!-- Left: Menu introduction -->
+        <div class="flex items-center px-6 py-16 sm:px-10 lg:px-14 lg:py-20">
+
+            <div class="w-full max-w-3xl">
+
+                <!-- Breadcrumb -->
+                <nav aria-label="Breadcrumb"
+                     class="mb-8 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-white/55">
+
+                    <a href="../index.html"
+                       class="transition hover:text-brandPink">
+
+                        Home
+
+                    </a>
+
+                    <i class="fa-solid fa-chevron-right text-[8px] text-brandPink"></i>
+
+                    <span class="text-white">
+                        Our Menu
+                    </span>
+
+                </nav>
+
+
+                <!-- Label -->
+                <div class="flex items-center gap-4">
+
+                    <span class="flex h-11 w-11 items-center justify-center rounded-full bg-brandPink text-white">
+
+                        <i class="fa-solid fa-spoon"></i>
+
+                    </span>
+
+                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-brandMint">
+                        Pick your happiness
+                    </span>
+
+                </div>
+
+
+                <!-- Heading -->
+                <h1 class="mt-7 font-display text-5xl font-extrabold leading-[0.95] tracking-tight sm:text-7xl lg:text-[92px]">
+
+                    What are you
+
+                    <span class="mt-2 block font-logo font-normal text-brandPink">
+                        craving?
+                    </span>
+
+                </h1>
+
+
+                <p class="mt-8 max-w-xl text-base leading-8 text-white/65 sm:text-lg">
+
+                    Scoops, sundaes, shakes and warm desserts-find your favourite
+                    or build something completely your own.
+
+                </p>
+
+
+                <!-- Category shortcuts -->
+                <div class="mt-10">
+
+                    <p class="mb-4 text-[10px] font-bold uppercase tracking-[0.25em] text-white/40">
+                        Jump to a category
+                    </p>
+
+
+                </div>
+
+
+                <!-- Main button -->
+
 
             </div>
 
         </div>
 
-        <!-- Right Image Area -->
-        <div class="relative mx-auto w-full max-w-[520px]">
 
-            <!-- Image Background Shape -->
-            <div class="absolute inset-4 rotate-6 rounded-[45px] bg-gradient-to-br from-teal-200 to-pink-200 dark:from-teal-900/40 dark:to-pink-900/40"></div>
+        <!-- Right: Order ticket -->
+        <div class="relative flex items-center justify-center bg-brandPink px-5 py-14 sm:px-10 lg:py-20">
 
-            <!-- Main Image -->
-            <div class="group relative overflow-hidden rounded-[45px] border-[7px] border-white shadow-2xl dark:border-zinc-800">
+            <!-- Large background word -->
+            <span class="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 rotate-90 font-display text-[100px] font-extrabold uppercase tracking-widest text-white/[0.07]">
+                Sweet
+            </span>
 
-                <img
-                    src="../assets/image/m24.jpg"
-                    alt="Delicious ice cream and desserts from Melt and Swirl"
-                    class="h-[440px] w-full object-cover transition duration-700 group-hover:scale-105"
-                >
 
-                <div class="absolute inset-0 bg-gradient-to-t from-[#3d211b]/75 via-transparent to-transparent"></div>
+            <div class="relative w-full max-w-[460px] rotate-1 transition duration-500 hover:rotate-0">
 
-                <!-- Image Information -->
-                <div class="absolute bottom-5 left-5 right-5 rounded-3xl border border-white/30 bg-white/20 p-4 text-white backdrop-blur-md">
+                <!-- Ticket -->
+                <div class="overflow-hidden rounded-[32px] bg-brandCream text-brandBrown shadow-[0_35px_80px_rgba(59,29,22,0.35)] dark:bg-zinc-900 dark:text-white">
 
-                    <div class="flex items-center justify-between gap-4">
+                    <!-- Ticket heading -->
+                    <div class="flex items-center justify-between border-b-2 border-dashed border-brandBrown/15 px-6 py-6 dark:border-white/15">
 
                         <div>
 
-                            <p class="mb-1 text-xs font-semibold uppercase tracking-[0.15em] text-pink-100">
-                                Most Loved
+                            <p class="text-[10px] font-extrabold uppercase tracking-[0.22em] text-brandPink">
+                                Today's special
                             </p>
 
-                            <h2 class="text-lg font-bold">
-                                Strawberry Dream Sundae
+                            <h2 class="mt-2 font-display text-3xl font-bold">
+                                Sweet Picks
                             </h2>
 
                         </div>
 
-                        <span class="shrink-0 rounded-full bg-white px-4 py-2 text-sm font-bold text-pink-500 shadow-lg">
-                            ₹189
-                        </span>
+                        <div class="text-right">
 
-                    </div>
+                            <p class="font-logo text-2xl text-brandPink">
+                                M&amp;S
+                            </p>
 
-                </div>
+                            <p class="text-[9px] font-bold uppercase tracking-wider text-slate-400">
+                                Order #025
+                            </p>
 
-            </div>
-
-            <!-- Floating Flavour Card -->
-            <div class="absolute -left-4 top-10 hidden rounded-2xl border border-white bg-white/95 p-3 shadow-xl sm:block dark:border-zinc-700 dark:bg-zinc-900/95">
-
-                <div class="flex items-center gap-3">
-
-                    <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-pink-100 text-pink-500 dark:bg-pink-500/15">
-                        <i class="fa-solid fa-ice-cream"></i>
-                    </div>
-
-                    <div>
-                        <p class="text-xs text-stone-500 dark:text-zinc-400">
-                            Ice Cream
-                        </p>
-
-                        <p class="text-sm font-bold text-[#4b2e27] dark:text-white">
-                            25+ Flavours
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- Floating Rating Card -->
-            <div class="absolute -bottom-5 right-5 rounded-2xl border border-white bg-white/95 px-4 py-3 shadow-xl dark:border-zinc-700 dark:bg-zinc-900/95">
-
-                <div class="flex items-center gap-3">
-
-                    <div class="flex -space-x-2 rtl:space-x-reverse">
-
-                        <span class="flex h-9 w-9 items-center justify-center rounded-full border-2 border-white bg-pink-100 text-xs font-bold text-pink-500 dark:border-zinc-900">
-                            MS
-                        </span>
-
-                        <span class="flex h-9 w-9 items-center justify-center rounded-full border-2 border-white bg-teal-100 text-xs font-bold text-teal-600 dark:border-zinc-900">
-                            4.9
-                        </span>
-
-                    </div>
-
-                    <div>
-                        <div class="flex gap-1 text-[10px] text-amber-400">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
                         </div>
 
-                        <p class="mt-1 text-xs font-semibold text-stone-600 dark:text-zinc-300">
-                            Loved by dessert fans
-                        </p>
                     </div>
+
+
+                    <!-- Menu items -->
+                    <div class="space-y-5 px-6 py-7">
+
+                        <div class="flex items-center gap-4">
+
+                            <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-pink-100 text-xl text-brandPink dark:bg-brandPink/15">
+
+                                <i class="fa-solid fa-ice-cream"></i>
+
+                            </span>
+
+                            <div class="min-w-0 flex-1">
+
+                                <div class="flex items-end gap-2">
+
+                                    <h3 class="font-bold">
+                                        Berry Bliss
+                                    </h3>
+
+                                    <span class="mb-1 flex-1 border-b border-dotted border-brandBrown/25 dark:border-white/25"></span>
+
+                                    <span class="font-display text-lg font-bold text-brandPink">
+                                        &#8377;149
+                                    </span>
+
+                                </div>
+
+                                <p class="mt-1 text-xs text-slate-500 dark:text-zinc-400">
+                                    Strawberry &middot; Vanilla &middot; Berry sauce
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="flex items-center gap-4">
+
+                            <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-amber-100 text-xl text-amber-600 dark:bg-amber-400/15">
+
+                                <i class="fa-solid fa-cookie-bite"></i>
+
+                            </span>
+
+                            <div class="min-w-0 flex-1">
+
+                                <div class="flex items-end gap-2">
+
+                                    <h3 class="font-bold">
+                                        Cookie Crush
+                                    </h3>
+
+                                    <span class="mb-1 flex-1 border-b border-dotted border-brandBrown/25 dark:border-white/25"></span>
+
+                                    <span class="font-display text-lg font-bold text-brandPink">
+                                        &#8377;179
+                                    </span>
+
+                                </div>
+
+                                <p class="mt-1 text-xs text-slate-500 dark:text-zinc-400">
+                                    Chocolate &middot; Cookies &middot; Fudge
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="flex items-center gap-4">
+
+                            <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brandMint text-xl text-brandTeal dark:bg-brandTeal/30 dark:text-brandMint">
+
+                                <i class="fa-solid fa-glass-water"></i>
+
+                            </span>
+
+                            <div class="min-w-0 flex-1">
+
+                                <div class="flex items-end gap-2">
+
+                                    <h3 class="font-bold">
+                                        Minty Melt
+                                    </h3>
+
+                                    <span class="mb-1 flex-1 border-b border-dotted border-brandBrown/25 dark:border-white/25"></span>
+
+                                    <span class="font-display text-lg font-bold text-brandPink">
+                                        &#8377;159
+                                    </span>
+
+                                </div>
+
+                                <p class="mt-1 text-xs text-slate-500 dark:text-zinc-400">
+                                    Mint &middot; Dark chocolate &middot; Cream
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Ticket footer -->
+                    <div class="relative border-t-2 border-dashed border-brandBrown/15 bg-white/50 px-6 py-6 dark:border-white/15 dark:bg-white/5">
+
+                        <!-- Ticket cutouts -->
+                        <span class="absolute -left-3 -top-3 h-6 w-6 rounded-full bg-brandPink"></span>
+
+                        <span class="absolute -right-3 -top-3 h-6 w-6 rounded-full bg-brandPink"></span>
+
+
+                        <div class="flex items-center justify-between gap-5">
+
+                            <div>
+
+                                <div class="flex gap-1 text-xs text-amber-400">
+
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+
+                                </div>
+
+                                <p class="mt-2 text-xs font-semibold text-slate-500 dark:text-zinc-400">
+                                    Customer favourites
+                                </p>
+
+                            </div>
+
+                            <span class="rounded-full bg-brandBrown px-4 py-2 text-xs font-bold text-white dark:bg-brandPink">
+                                Fresh today
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Floating sticker -->
+                <div class="absolute -right-3 -top-6 flex h-24 w-24 -rotate-12 items-center justify-center rounded-full border-4 border-brandCream bg-brandTeal text-center text-xs font-extrabold uppercase leading-4 tracking-wider text-white shadow-xl sm:-right-8">
+
+                    <br>
 
                 </div>
 
@@ -896,7 +1267,6 @@
     </div>
 
 </section>
-
 
 
 
@@ -936,7 +1306,7 @@
         <!-- Category Grid -->
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-12">
 
-            <!-- Ice Cream – Large Card -->
+            <!-- Ice Cream - Large Card -->
             <a href="#ice-creams"
                class="group relative min-h-[430px] overflow-hidden rounded-[35px] lg:col-span-7">
 
@@ -971,19 +1341,12 @@
                             </p>
                         </div>
 
-                        <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-pink-500 transition duration-300 group-hover:-rotate-45 group-hover:bg-pink-500 group-hover:text-white">
-
-                            <i class="fa-solid fa-arrow-right rtl:rotate-180"></i>
-
-                        </span>
 
                     </div>
 
                 </div>
 
-                <span class="absolute right-5 top-5 rounded-full bg-white/90 px-4 py-2 text-xs font-bold text-[#4b2e27] backdrop-blur dark:bg-black/70 dark:text-white">
-                    25+ Flavours
-                </span>
+
 
             </a>
 
@@ -1012,14 +1375,10 @@
                     <div class="mt-4 flex items-center justify-between">
 
                         <span class="text-sm font-semibold text-white/80">
-                            Starting from ₹149
+                            Starting from &#8377;149
                         </span>
 
-                        <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-teal-600 transition duration-300 group-hover:-rotate-45 group-hover:bg-teal-500 group-hover:text-white">
 
-                            <i class="fa-solid fa-arrow-right rtl:rotate-180"></i>
-
-                        </span>
 
                     </div>
 
@@ -1119,7 +1478,7 @@
 
         </div>
 
-        
+
     </div>
 
 </section>
@@ -1236,7 +1595,7 @@
 
                             <i class="fa-solid fa-stroopwafel text-xl text-pink-500"></i>
                             <span>Waffle Cup</span>
-                            <small>₹79</small>
+                            <small>&#8377;79</small>
 
                         </button>
 
@@ -1248,7 +1607,7 @@
 
                             <i class="fa-solid fa-cake-candles text-xl text-amber-500"></i>
                             <span>Brownie Bowl</span>
-                            <small>₹99</small>
+                            <small>&#8377;99</small>
 
                         </button>
 
@@ -1260,7 +1619,7 @@
 
                             <i class="fa-solid fa-cookie-bite text-xl text-orange-500"></i>
                             <span>Cookie Cup</span>
-                            <small>₹89</small>
+                            <small>&#8377;89</small>
 
                         </button>
 
@@ -1272,7 +1631,7 @@
 
                             <i class="fa-solid fa-bowl-food text-xl text-teal-500"></i>
                             <span>Classic Cup</span>
-                            <small>₹59</small>
+                            <small>&#8377;59</small>
 
                         </button>
 
@@ -1311,7 +1670,7 @@
 
                             <span class="h-7 w-7 rounded-full bg-pink-400 shadow-inner"></span>
                             <span>Strawberry</span>
-                            <small>₹65</small>
+                            <small>&#8377;65</small>
 
                         </button>
 
@@ -1323,7 +1682,7 @@
 
                             <span class="h-7 w-7 rounded-full bg-[#63372c] shadow-inner"></span>
                             <span>Chocolate</span>
-                            <small>₹75</small>
+                            <small>&#8377;75</small>
 
                         </button>
 
@@ -1335,7 +1694,7 @@
 
                             <span class="h-7 w-7 rounded-full bg-lime-300 shadow-inner"></span>
                             <span>Pistachio</span>
-                            <small>₹85</small>
+                            <small>&#8377;85</small>
 
                         </button>
 
@@ -1347,7 +1706,7 @@
 
                             <span class="h-7 w-7 rounded-full bg-violet-400 shadow-inner"></span>
                             <span>Blueberry</span>
-                            <small>₹80</small>
+                            <small>&#8377;80</small>
 
                         </button>
 
@@ -1386,7 +1745,7 @@
 
                             <i class="fa-solid fa-apple-whole text-xl text-rose-500"></i>
                             <span>Berry Mix</span>
-                            <small>₹35</small>
+                            <small>&#8377;35</small>
 
                         </button>
 
@@ -1398,7 +1757,7 @@
 
                             <i class="fa-solid fa-cookie text-xl text-amber-500"></i>
                             <span>Cookie Crumb</span>
-                            <small>₹30</small>
+                            <small>&#8377;30</small>
 
                         </button>
 
@@ -1410,7 +1769,7 @@
 
                             <i class="fa-solid fa-droplet text-xl text-[#63372c]"></i>
                             <span>Choco Chips</span>
-                            <small>₹40</small>
+                            <small>&#8377;40</small>
 
                         </button>
 
@@ -1422,7 +1781,7 @@
 
                             <i class="fa-solid fa-cloud text-xl text-orange-400"></i>
                             <span>Caramel Pop</span>
-                            <small>₹45</small>
+                            <small>&#8377;45</small>
 
                         </button>
 
@@ -1452,7 +1811,7 @@
 
                     <p id="dessertTotal"
                        class="mt-1 text-xl font-bold text-pink-500">
-                        ₹179
+                        &#8377;179
                     </p>
 
                 </div>
@@ -1495,7 +1854,7 @@
 
                         </div>
 
-                        
+
                     </div>
 
                 </div>
@@ -1594,7 +1953,7 @@
                                         </h4>
 
                                         <span class="font-bold text-pink-500">
-                                            ₹129
+                                            &#8377;129
                                         </span>
                                     </div>
 
@@ -1634,7 +1993,7 @@
                                         </div>
 
                                         <span class="font-bold text-pink-500">
-                                            ₹159
+                                            &#8377;159
                                         </span>
 
                                     </div>
@@ -1668,7 +2027,7 @@
                                         </h4>
 
                                         <span class="font-bold text-pink-500">
-                                            ₹179
+                                            &#8377;179
                                         </span>
                                     </div>
 
@@ -1684,7 +2043,7 @@
 
                     </div>
 
-                   
+
 
                 </div>
 
@@ -1748,7 +2107,7 @@
                                         </div>
 
                                         <span class="font-bold text-orange-300">
-                                            ₹169
+                                            &#8377;169
                                         </span>
 
                                     </div>
@@ -1782,7 +2141,7 @@
                                         </h4>
 
                                         <span class="font-bold text-orange-300">
-                                            ₹189
+                                            &#8377;189
                                         </span>
                                     </div>
 
@@ -1815,7 +2174,7 @@
                                         </h4>
 
                                         <span class="font-bold text-orange-300">
-                                            ₹199
+                                            &#8377;199
                                         </span>
                                     </div>
 
@@ -1831,7 +2190,7 @@
 
                     </div>
 
-                    
+
                 </div>
 
             </div>
@@ -2107,13 +2466,6 @@
 
             </div>
 
-            <a href="contact.html"
-               class="inline-flex w-fit items-center gap-3 rounded-full border border-pink-300 px-5 py-3 text-sm font-bold text-pink-500 transition hover:bg-pink-500 hover:text-white">
-
-                Custom Cake Order
-                <i class="fa-solid fa-arrow-right rtl:rotate-180"></i>
-
-            </a>
 
         </div>
 
@@ -2151,7 +2503,7 @@
                             </p>
                         </div>
 
-                        <span class="font-bold text-pink-500">₹119</span>
+                        <span class="font-bold text-pink-500">&#8377;119</span>
 
                     </div>
 
@@ -2191,11 +2543,11 @@
                             </p>
                         </div>
 
-                        <span class="font-bold text-pink-500">₹129</span>
+                        <span class="font-bold text-pink-500">&#8377;129</span>
 
                     </div>
 
-               
+
 
                 </div>
 
@@ -2232,11 +2584,11 @@
                             </p>
                         </div>
 
-                        <span class="font-bold text-pink-500">₹149</span>
+                        <span class="font-bold text-pink-500">&#8377;149</span>
 
                     </div>
 
-                   
+
                 </div>
 
             </article>
@@ -2272,11 +2624,11 @@
                             </p>
                         </div>
 
-                        <span class="font-bold text-pink-500">₹109</span>
+                        <span class="font-bold text-pink-500">&#8377;109</span>
 
                     </div>
 
-                  
+
                 </div>
 
             </article>
@@ -2312,11 +2664,11 @@
                             </p>
                         </div>
 
-                        <span class="font-bold text-pink-500">₹119</span>
+                        <span class="font-bold text-pink-500">&#8377;119</span>
 
                     </div>
 
-               
+
 
                 </div>
 
@@ -2353,11 +2705,11 @@
                             </p>
                         </div>
 
-                        <span class="font-bold text-pink-500">₹129</span>
+                        <span class="font-bold text-pink-500">&#8377;129</span>
 
                     </div>
 
-                   
+
 
                 </div>
 
@@ -2394,11 +2746,11 @@
                             </p>
                         </div>
 
-                        <span class="font-bold text-pink-500">₹159</span>
+                        <span class="font-bold text-pink-500">&#8377;159</span>
 
                     </div>
 
-                    
+
                 </div>
 
             </article>
@@ -2434,11 +2786,11 @@
                             </p>
                         </div>
 
-                        <span class="font-bold text-pink-500">₹169</span>
+                        <span class="font-bold text-pink-500">&#8377;169</span>
 
                     </div>
 
-                   
+
 
                 </div>
 
@@ -2601,7 +2953,7 @@
 
                         <i class="fa-solid fa-chevron-right text-[10px] text-brandPink transition group-hover:translate-x-1 rtl:rotate-180"></i>
 
-                        Today’s Specials
+                        Today's Specials
                     </a>
                 </li>
 
@@ -2634,10 +2986,10 @@
 
                 <div class="flex items-center justify-between gap-5 border-b border-pink-100 pb-3 dark:border-zinc-800">
 
-                    <span>Monday – Friday</span>
+                    <span>Monday - Friday</span>
 
                     <span class="font-bold text-brandTeal dark:text-brandMint">
-                        10 AM – 10 PM
+                        10 AM - 10 PM
                     </span>
 
                 </div>
@@ -2647,7 +2999,7 @@
                     <span>Saturday</span>
 
                     <span class="font-bold text-brandTeal dark:text-brandMint">
-                        10 AM – 11 PM
+                        10 AM - 11 PM
                     </span>
 
                 </div>
@@ -2657,7 +3009,7 @@
                     <span>Sunday</span>
 
                     <span class="font-bold text-brandPink">
-                        11 AM – 10 PM
+                        11 AM - 10 PM
                     </span>
 
                 </div>
